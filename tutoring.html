@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutoring — Tudino Guided Growth</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .tutoring-page {
+      background: var(--sage);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tutoring-content {
+      flex: 1;
+      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem);
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .tutoring-header {
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .tutoring-header h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+    }
+
+    /* Cards grid */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .package-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .package-card h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      color: var(--pink);
+      margin-bottom: 1.1rem;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    .package-card ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      font-family: var(--font-body);
+      font-size: clamp(0.82rem, 1.2vw, 0.92rem);
+      color: var(--text-mid);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .package-card ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    .package-price {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--text-dark);
+      font-weight: 600;
+      text-align: center;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1.5px solid var(--sage-mid);
+    }
+
+    .package-card-footer {
+      margin-top: 1.25rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Tagline banner */
+    .tutoring-tagline {
+      background: var(--yellow);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    .tutoring-tagline p {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      color: var(--text-dark);
+      line-height: 1.45;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .packages-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .packages-grid .package-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 420px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+      .packages-grid .package-card:last-child {
+        grid-column: auto;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo">
+      Tudino Guided Growth
+      <span>Learning & Family Support</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="tutoring.html" class="active">Tutoring</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" id="navDrawer" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="tutoring.html" class="active">Tutoring</a>
+    <a href="coaching.html">Coaching</a>
+  </div>
+
+  <!-- PAGE -->
+  <div class="page tutoring-page">
+    <div class="tutoring-content">
+
+      <div class="tutoring-header fade-up">
+        <h1>Tutoring<br>Packages</h1>
+      </div>
+
+      <div class="packages-grid">
+
+        <!-- Card 1: Academic Tutoring -->
+        <div class="package-card fade-up delay-1">
+          <h2>Academic Tutoring &amp; Skill Building</h2>
+          <ul>
+            <li>1:1 Tutoring sessions</li>
+            <li>Brief parent updates after each session</li>
+            <li>Reading &amp; comprehension support</li>
+            <li>Writing development</li>
+            <li>Math skill-building</li>
+            <li>Executive functioning &amp; study skills</li>
+            <li>Breaking down assignments/projects</li>
+            <li>Building learning confidence</li>
+            <li>Developing strong academic habits</li>
+          </ul>
+          <div class="package-card-footer">
+            <a href="coaching.html" class="btn">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Card 2: Academic + Home-School -->
+        <div class="package-card fade-up delay-2">
+          <h2>Academic Tutoring &amp; Skill Building<br>+<br>Home–School Connection &amp; Collaboration</h2>
+          <ul>
+            <li>Teacher communication (with permission)</li>
+            <li>Regular progress updates and instructional focus areas provided in a written progress summary</li>
+            <li>Scheduled check-ins with families to review progress, strengths, and instructional focus areas</li>
+          </ul>
+          <div class="package-price">$150 <em>per 1 hour session</em></div>
+        </div>
+
+        <!-- Card 3: School Meeting Support (add-on) -->
+        <div class="package-card fade-up delay-3">
+          <h2>School Meeting Support<br>(Add-on)</h2>
+          <ul>
+            <li>Helping clarify educational terminology and data</li>
+            <li>Supporting understanding of school-based recommendations</li>
+            <li>Assisting families in processing information and identifying next steps</li>
+          </ul>
+          <div class="package-price">$60 <em>add-on</em></div>
+        </div>
+
+      </div>
+
+      <!-- Tagline -->
+      <div class="tutoring-tagline fade-up delay-4">
+        <p>Every service is designed to support students academically while helping families feel informed, connected, and confident in their child's learning journey.</p>
+      </div>
+
+    </div>
+
+    <footer>
+      &copy; <strong>Tudino Guided Growth</strong> · All rights reserved
+    </footer>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
