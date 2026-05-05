@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Tutoring & Skill Building — Tudino Learning</title>
+  <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .service-page {
+      background: var(--sage);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Hero ── */
+    .service-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+    }
+
+    .service-hero-img {
+      background: linear-gradient(180deg, #b8daf0 0%, #c8e8f5 55%, #90c46e 72%, #5a9140 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+    }
+
+    .service-hero-img svg {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .service-hero-text {
+      background: var(--sage);
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--green-dark); }
+    .back-link::before { content: '←'; }
+
+    .service-hero-text h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .service-intro {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.4vw, 1rem);
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ── Content ── */
+    .service-content {
+      flex: 1;
+      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem);
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── List panel ── */
+    .list-panel {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2.25rem);
+    }
+
+    .list-panel ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      columns: 2;
+      column-gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    .list-panel li {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-mid);
+      line-height: 1.6;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(26,26,26,0.07);
+      break-inside: avoid;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+
+    .list-panel li:last-child { border-bottom: none; }
+
+    .list-icon {
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      margin-top: 0.3rem;
+      flex-shrink: 0;
+      fill: var(--pink);
+    }
+
+    @media (max-width: 620px) {
+      .list-panel ul { columns: 1; }
+    }
+
+    /* ── Tagline strip ── */
+    .tagline-strip {
+      background: var(--lavender);
+      color: var(--text-dark);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 0.85rem 1rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .tagline-strip span::before {
+      content: '✦ ';
+      opacity: 0.6;
+    }
+
+    /* ── Goal callout ── */
+    .goal-callout {
+      background: var(--lavender);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* ── Pricing ── */
+    .pricing-section h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .pricing-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.6rem;
+    }
+
+    .pricing-card.featured {
+      background: var(--green-panel);
+      box-shadow: var(--shadow-md);
+    }
+
+    .price-label {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+      color: var(--text-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      color: var(--text-dark);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .price-per {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(0.82rem, 1.2vw, 0.92rem);
+      color: var(--text-mid);
+    }
+
+    .pricing-divider {
+      width: 100%;
+      height: 1.5px;
+      background: rgba(26,26,26,0.1);
+      border-radius: 2px;
+    }
+
+    .package-desc {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .savings-badge {
+      display: inline-block;
+      background: var(--pink);
+      color: var(--text-dark);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .service-hero { grid-template-columns: 1fr; }
+      .service-hero-img { min-height: 240px; max-height: 280px; }
+      .pricing-cards { grid-template-columns: 1fr; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <div class="page service-page">
+
+    <div class="service-hero">
+      <div class="service-hero-img" aria-label="Study desk with lamp, open book, stacked books, pencil, and achievement stars">
+        <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <rect width="600" height="420" fill="#EBF5FF"/>
+          <circle cx="524" cy="60" r="92" fill="#A9DEF9" opacity="0.26"/>
+          <circle cx="52" cy="374" r="68" fill="#D0F4DE" opacity="0.34"/>
+          <rect x="68" y="272" width="464" height="16" rx="5" fill="#dbb896"/>
+          <rect x="88" y="288" width="16" height="92" rx="4" fill="#c9a47e"/>
+          <rect x="496" y="288" width="16" height="92" rx="4" fill="#c9a47e"/>
+          <rect x="116" y="154" width="7" height="120" rx="3" fill="#ddd"/>
+          <ellipse cx="119" cy="274" rx="20" ry="6" fill="#ccc"/>
+          <polygon points="86,154 152,154 140,188 98,188" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5"/>
+          <ellipse cx="119" cy="222" rx="62" ry="30" fill="#FCF6BD" opacity="0.16"/>
+          <rect x="198" y="212" width="100" height="62" rx="4" fill="#FCF6BD"/>
+          <rect x="298" y="212" width="100" height="62" rx="4" fill="white"/>
+          <rect x="294" y="209" width="8" height="68" rx="2" fill="#d4c84a"/>
+          <line x1="214" y1="228" x2="284" y2="228" stroke="#ccc" stroke-width="1.5"/>
+          <line x1="214" y1="240" x2="284" y2="240" stroke="#ccc" stroke-width="1.5"/>
+          <line x1="214" y1="252" x2="284" y2="252" stroke="#ccc" stroke-width="1.5"/>
+          <line x1="214" y1="264" x2="284" y2="264" stroke="#ccc" stroke-width="1.5"/>
+          <line x1="310" y1="228" x2="380" y2="228" stroke="#ccc" stroke-width="1.5"/>
+          <line x1="310" y1="240" x2="380" y2="240" stroke="#ccc" stroke-width="1.5"/>
+          <line x1="310" y1="252" x2="380" y2="252" stroke="#ccc" stroke-width="1.5"/>
+          <line x1="310" y1="264" x2="380" y2="264" stroke="#ccc" stroke-width="1.5"/>
+          <g transform="translate(408,194) rotate(22)">
+            <rect x="-5" y="0" width="11" height="64" rx="2" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.2"/>
+            <rect x="-5" y="0" width="11" height="13" rx="2" fill="#FF99C8"/>
+            <rect x="-5" y="11" width="11" height="3.5" fill="#d4699e"/>
+            <polygon points="-5,64 6,64 0.5,78" fill="#d4a870"/>
+            <polygon points="-1.5,67 1.5,67 0.5,78" fill="#555"/>
+          </g>
+          <rect x="76" y="222" width="72" height="18" rx="4" fill="#FF99C8"/>
+          <rect x="76" y="222" width="11" height="18" rx="3" fill="#d4699e"/>
+          <rect x="82" y="206" width="66" height="16" rx="4" fill="#A9DEF9"/>
+          <rect x="82" y="206" width="11" height="16" rx="3" fill="#74b8e8"/>
+          <rect x="88" y="192" width="58" height="14" rx="4" fill="#E4C1F9"/>
+          <rect x="88" y="192" width="11" height="14" rx="3" fill="#b890d4"/>
+          <rect x="92" y="180" width="52" height="12" rx="4" fill="#FCF6BD"/>
+          <rect x="92" y="180" width="11" height="12" rx="3" fill="#d4c84a"/>
+          <rect x="462" y="224" width="14" height="50" rx="4" fill="#FF99C8"/>
+          <ellipse cx="469" cy="276" rx="22" ry="7" fill="#d4699e" opacity="0.42"/>
+          <ellipse cx="469" cy="222" rx="12" ry="22" fill="#D0F4DE"/>
+          <ellipse cx="453" cy="230" rx="10" ry="16" fill="#b8ead0" transform="rotate(-22,453,230)"/>
+          <ellipse cx="485" cy="230" rx="10" ry="16" fill="#b8ead0" transform="rotate(22,485,230)"/>
+          <path d="M342,108 L346,122 L360,122 L349,130 L353,144 L342,136 L331,144 L335,130 L324,122 L338,122 Z" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5" opacity="0.95"/>
+          <path d="M418,70 L421,81 L432,81 L424,87 L427,98 L418,92 L409,98 L412,87 L404,81 L415,81 Z" fill="#FF99C8" opacity="0.8"/>
+          <path d="M228,74 L230,83 L239,83 L232,88 L235,97 L228,92 L221,97 L224,88 L217,83 L226,83 Z" fill="#E4C1F9" opacity="0.85"/>
+          <path d="M490,136 L492,144 L500,144 L494,148 L496,156 L490,152 L484,156 L486,148 L480,144 L488,144 Z" fill="#A9DEF9" opacity="0.7"/>
+          <circle cx="482" cy="200" r="5" fill="#D0F4DE" opacity="0.55"/>
+          <circle cx="162" cy="126" r="5" fill="#FF99C8" opacity="0.4"/>
+        </svg>
+      </div>
+
+      <div class="service-hero-text fade-up">
+        <a href="tutoring.html" class="back-link">Back to Tutoring</a>
+        <h1>Academic Tutoring &amp; Skill Building</h1>
+        <p class="service-intro">Individualized tutoring sessions are designed to meet each student where they are and support their growth in a structured, encouraging way. Instruction is tailored to align with classroom expectations while also addressing each student's unique learning style, pace, and areas of need.</p>
+      </div>
+    </div>
+
+    <div class="service-content">
+
+      <div class="fade-up">
+        <h2 class="section-heading">Sessions may focus on:</h2>
+        <div class="list-panel">
+          <ul>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Reading comprehension and fluency</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Writing development</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Math skills and problem-solving</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Executive functioning and study strategies</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Breaking down assignments and long-term projects</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Developing organization systems and routines</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Building study strategies and time management skills</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Skill-building and assignment support</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Brief parent updates following each session</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Building learning confidence and independence</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="goal-callout fade-up delay-1">
+        The goal of tutoring is not only to improve academic performance, but also to build confidence, independence, and a more positive approach to learning over time.
+      </div>
+
+      <div class="pricing-section fade-up delay-2">
+        <h2>Pricing &amp; Packages</h2>
+        <p class="pricing-subtitle">Flexible options designed to support your child's growth while meeting your family's needs.</p>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="price-label">Per Session</div>
+            <div class="price-amount">$120</div>
+            <div class="price-per">per hour</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">1:1 instruction · skill-building &amp; assignment support · brief parent update</div>
+          </div>
+          <div class="pricing-card">
+            <div class="price-label">4-Session Package</div>
+            <div class="price-amount">$420</div>
+            <div class="price-per">total</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">4 sessions</div>
+            <div class="savings-badge">Save $60</div>
+          </div>
+          <div class="pricing-card featured">
+            <div class="price-label">8-Session Package</div>
+            <div class="price-amount">$860</div>
+            <div class="price-per">total</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">8 sessions</div>
+            <div class="savings-badge">Save $100</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/components-loader.js"></script>
+</body>
+</html>

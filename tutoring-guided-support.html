@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academic Tutoring & Guided Support — Tudino Learning</title>
+  <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .service-page {
+      background: var(--sage);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Hero (text left, image right) ── */
+    .service-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+    }
+
+    .service-hero-text {
+      background: var(--green-panel);
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-hero-img {
+      background: linear-gradient(180deg, #b8daf0 0%, #c8e8f5 55%, #90c46e 72%, #5a9140 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+    }
+
+    .service-hero-img svg {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    /* ── Tagline strip ── */
+    .tagline-strip {
+      background: var(--lavender);
+      color: var(--text-dark);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 0.85rem 1rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .tagline-strip span::before {
+      content: '✦ ';
+      opacity: 0.6;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--green-dark); }
+    .back-link::before { content: '←'; }
+
+    .service-hero-text h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .service-intro {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.4vw, 1rem);
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ── Content ── */
+    .service-content {
+      flex: 1;
+      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem);
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Tier note ── */
+    .tier-note {
+      background: var(--yellow);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .tier-note::before { content: '★'; color: var(--green-dark); }
+
+    /* ── List panel ── */
+    .list-panel {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .list-panel li {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-mid);
+      line-height: 1.65;
+      padding: clamp(0.9rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2rem);
+      border-bottom: 1.5px solid rgba(26,26,26,0.07);
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .list-panel li:last-child { border-bottom: none; }
+
+    .list-icon {
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      margin-top: 0.3rem;
+      flex-shrink: 0;
+      fill: var(--pink);
+    }
+
+    /* ── Goal callout ── */
+    .goal-callout {
+      background: var(--lavender);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* ── Pricing ── */
+    .pricing-section h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .pricing-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.6rem;
+    }
+
+    .pricing-card.featured {
+      background: var(--green-panel);
+      box-shadow: var(--shadow-md);
+    }
+
+    .price-label {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+      color: var(--text-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      color: var(--text-dark);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .price-per {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(0.82rem, 1.2vw, 0.92rem);
+      color: var(--text-mid);
+    }
+
+    .pricing-divider {
+      width: 100%;
+      height: 1.5px;
+      background: rgba(26,26,26,0.1);
+      border-radius: 2px;
+    }
+
+    .package-desc {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .savings-badge {
+      display: inline-block;
+      background: var(--pink);
+      color: var(--text-dark);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .service-hero { grid-template-columns: 1fr; }
+      .service-hero-img { min-height: 240px; max-height: 280px; order: -1; }
+      .pricing-cards { grid-template-columns: 1fr; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <div class="page service-page">
+
+    <div class="service-hero">
+      <div class="service-hero-text fade-up">
+        <a href="tutoring.html" class="back-link">Back to Tutoring</a>
+        <h1>Academic Tutoring &amp; Guided Support</h1>
+        <p class="service-intro">This service is designed to create consistency between tutoring and what is happening in the classroom. With parent permission, communication and collaboration help ensure that instruction is aligned with classroom expectations and that students receive cohesive support across environments.</p>
+      </div>
+
+      <div class="service-hero-img" aria-label="A house and school building connected by a path with hearts and stars, representing home-school collaboration">
+        <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <rect width="600" height="420" fill="#E6FAF0"/>
+          <circle cx="300" cy="55" r="105" fill="#D0F4DE" opacity="0.38"/>
+          <rect x="0" y="348" width="600" height="72" fill="#D0F4DE"/>
+          <path d="M 178 348 Q 300 295 422 348" fill="none" stroke="#A9DEF9" stroke-width="14" stroke-linecap="round"/>
+          <path d="M 178 348 Q 300 295 422 348" fill="none" stroke="white" stroke-width="4" stroke-dasharray="14,11" stroke-linecap="round"/>
+          <rect x="32" y="240" width="152" height="120" rx="6" fill="white"/>
+          <polygon points="14,246 108,166 202,246" fill="#FF99C8"/>
+          <rect x="144" y="178" width="24" height="38" rx="3" fill="#d4699e"/>
+          <rect x="94" y="302" width="32" height="58" rx="5" fill="#A9DEF9"/>
+          <circle cx="122" cy="332" r="3" fill="white"/>
+          <rect x="44" y="264" width="40" height="32" rx="4" fill="#A9DEF9"/>
+          <line x1="64" y1="264" x2="64" y2="296" stroke="white" stroke-width="2"/>
+          <line x1="44" y1="280" x2="84" y2="280" stroke="white" stroke-width="2"/>
+          <rect x="136" y="264" width="40" height="32" rx="4" fill="#A9DEF9"/>
+          <line x1="156" y1="264" x2="156" y2="296" stroke="white" stroke-width="2"/>
+          <line x1="136" y1="280" x2="176" y2="280" stroke="white" stroke-width="2"/>
+          <rect x="420" y="220" width="164" height="140" rx="6" fill="white"/>
+          <rect x="412" y="210" width="180" height="18" rx="5" fill="#E4C1F9"/>
+          <rect x="496" y="160" width="4" height="54" fill="#bbb"/>
+          <polygon points="500,160 532,172 500,184" fill="#FF99C8"/>
+          <rect x="430" y="236" width="28" height="22" rx="3" fill="#A9DEF9"/>
+          <rect x="470" y="236" width="28" height="22" rx="3" fill="#A9DEF9"/>
+          <rect x="510" y="236" width="28" height="22" rx="3" fill="#A9DEF9"/>
+          <rect x="550" y="236" width="26" height="22" rx="3" fill="#A9DEF9"/>
+          <rect x="430" y="274" width="28" height="22" rx="3" fill="#A9DEF9" opacity="0.7"/>
+          <rect x="470" y="274" width="28" height="22" rx="3" fill="#A9DEF9" opacity="0.7"/>
+          <rect x="510" y="274" width="28" height="22" rx="3" fill="#A9DEF9" opacity="0.7"/>
+          <rect x="476" y="306" width="38" height="54" rx="5" fill="#FCF6BD"/>
+          <circle cx="510" cy="334" r="3" fill="#d4c84a"/>
+          <path d="M316,310 C316,303 307,296 301,303 C295,296 286,303 286,310 C286,319 301,332 301,332 C301,332 316,319 316,310 Z" fill="#FF99C8" opacity="0.85"/>
+          <path d="M238,296 L241,306 L251,306 L243,312 L246,322 L238,316 L230,322 L233,312 L225,306 L235,306 Z" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1" opacity="0.9"/>
+          <path d="M376,308 C376,303 369,298 365,303 C361,298 354,303 354,308 C354,315 365,324 365,324 C365,324 376,315 376,308 Z" fill="#E4C1F9" opacity="0.9"/>
+          <circle cx="300" cy="380" r="5" fill="white" opacity="0.55"/>
+          <circle cx="180" cy="372" r="4" fill="white" opacity="0.5"/>
+          <circle cx="420" cy="372" r="4" fill="white" opacity="0.5"/>
+          <circle cx="46" cy="170" r="9" fill="#FF99C8" opacity="0.25"/>
+          <circle cx="554" cy="142" r="11" fill="#E4C1F9" opacity="0.28"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="service-content">
+
+      
+
+      <div class="fade-up delay-1">
+        <h2 class="section-heading">This service may include:</h2>
+        <div class="list-panel">
+          <ul style="padding:0; margin:0; list-style:none;">
+            <li>Includes everything in Academic Tutoring &amp; Skill Building, plus the following:</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Communication with classroom teachers to align goals and expectations</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Collaboration to support consistency between school and tutoring</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Family conferencing to review progress, strengths, and next steps</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Regular progress updates and instructional focus areas shared through written progress summaries (biweekly or monthly)</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Alignment with classroom expectations and current curriculum</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Scheduled check-ins with families to review progress and plan next steps</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="goal-callout fade-up delay-2">
+        The goal is to help families feel informed, connected, and confident in their child's learning experience.
+      </div>
+
+      <div class="pricing-section fade-up delay-2">
+        <h2>Pricing &amp; Packages</h2>
+        <p class="pricing-subtitle">Flexible options designed to support your child's growth while meeting your family's needs.</p>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="price-label">Per Session</div>
+            <div class="price-amount">$160</div>
+            <div class="price-per">per hour</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">All Skill Building features + teacher communication, progress summaries &amp; family conferencing</div>
+          </div>
+          <div class="pricing-card">
+            <div class="price-label">4-Session Package</div>
+            <div class="price-amount">$580</div>
+            <div class="price-per">total</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">4 sessions</div>
+            <div class="savings-badge">Save $60</div>
+          </div>
+          <div class="pricing-card featured">
+            <div class="price-label">8-Session Package</div>
+            <div class="price-amount">$1,180</div>
+            <div class="price-per">total</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">8 sessions</div>
+            <div class="savings-badge">Save $100</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/components-loader.js"></script>
+</body>
+</html>

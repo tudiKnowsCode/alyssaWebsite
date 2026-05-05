@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Meeting Preparation & Support — Tudino Learning</title>
+  <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .service-page {
+      background: var(--sage);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Hero ── */
+    .service-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 420px;
+    }
+
+    .service-hero-img {
+      background: linear-gradient(180deg, #b8daf0 0%, #c8e8f5 55%, #90c46e 72%, #5a9140 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 300px;
+    }
+
+    .service-hero-img svg {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .service-hero-text {
+      background: var(--sage);
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--green-dark); }
+    .back-link::before { content: '←'; }
+
+    .service-hero-text h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .service-intro {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.4vw, 1rem);
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ── Content ── */
+    .service-content {
+      flex: 1;
+      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem);
+      max-width: 1240px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── List panel ── */
+    .list-panel {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .list-panel li {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-mid);
+      line-height: 1.65;
+      padding: clamp(0.9rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 2rem);
+      border-bottom: 1.5px solid rgba(26,26,26,0.07);
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .list-panel li:last-child { border-bottom: none; }
+
+    .list-icon {
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      margin-top: 0.3rem;
+      flex-shrink: 0;
+      fill: var(--pink);
+    }
+
+    /* ── Tagline strip ── */
+    .tagline-strip {
+      background: var(--lavender);
+      color: var(--text-dark);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 0.85rem 1rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .tagline-strip span::before {
+      content: '✦ ';
+      opacity: 0.6;
+    }
+
+    /* ── Attendance note ── */
+    .attendance-note {
+      background: var(--yellow);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.5rem;
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-dark);
+      line-height: 1.65;
+    }
+    .attendance-note strong {
+      font-family: var(--font-display);
+      font-weight: 800;
+    }
+
+    /* ── Goal callout ── */
+    .goal-callout {
+      background: var(--lavender);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* ── Pricing ── */
+    .pricing-section h2 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .pricing-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: clamp(1.25rem, 2.5vw, 1.75rem);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.6rem;
+    }
+
+    .pricing-card.featured {
+      background: var(--green-panel);
+      box-shadow: var(--shadow-md);
+    }
+
+    .price-label {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+      color: var(--text-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      color: var(--text-dark);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .price-per {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(0.82rem, 1.2vw, 0.92rem);
+      color: var(--text-mid);
+    }
+
+    .pricing-divider {
+      width: 100%;
+      height: 1.5px;
+      background: rgba(26,26,26,0.1);
+      border-radius: 2px;
+    }
+
+    .package-desc {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .savings-badge {
+      display: inline-block;
+      background: var(--pink);
+      color: var(--text-dark);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .service-hero { grid-template-columns: 1fr; }
+      .service-hero-img { min-height: 240px; max-height: 280px; }
+      .pricing-cards { grid-template-columns: 1fr; max-width: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <div class="page service-page">
+
+    <div class="service-hero">
+      <div class="service-hero-img" aria-label="Round meeting table with clipboard checklist, documents, and calendar representing school meeting preparation">
+        <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+          <rect width="600" height="420" fill="#F3EAFF"/>
+          <circle cx="508" cy="52" r="88" fill="#E4C1F9" opacity="0.3"/>
+          <circle cx="58" cy="380" r="72" fill="#D0F4DE" opacity="0.32"/>
+          <ellipse cx="300" cy="300" rx="210" ry="70" fill="#dbb896"/>
+          <ellipse cx="300" cy="292" rx="210" ry="70" fill="#e8ccac"/>
+          <rect x="104" y="202" width="56" height="44" rx="12" fill="#E4C1F9"/>
+          <rect x="114" y="246" width="36" height="14" rx="4" fill="#d4aff0"/>
+          <rect x="440" y="202" width="56" height="44" rx="12" fill="#A9DEF9"/>
+          <rect x="450" y="246" width="36" height="14" rx="4" fill="#82cef0"/>
+          <rect x="226" y="346" width="56" height="44" rx="12" fill="#FF99C8"/>
+          <rect x="248" y="196" width="104" height="136" rx="8" fill="white" stroke="#E4C1F9" stroke-width="2"/>
+          <rect x="280" y="188" width="40" height="18" rx="6" fill="#E4C1F9"/>
+          <rect x="288" y="186" width="24" height="8" rx="4" fill="#b890d4"/>
+          <circle cx="268" cy="226" r="9" fill="#D0F4DE"/>
+          <path d="M263,226 L267,230 L274,221" fill="none" stroke="#5a9140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="283" y="220" width="58" height="6" rx="3" fill="#eee"/>
+          <circle cx="268" cy="250" r="9" fill="#D0F4DE"/>
+          <path d="M263,250 L267,254 L274,245" fill="none" stroke="#5a9140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="283" y="244" width="50" height="6" rx="3" fill="#eee"/>
+          <circle cx="268" cy="274" r="9" fill="#D0F4DE"/>
+          <path d="M263,274 L267,278 L274,269" fill="none" stroke="#5a9140" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="283" y="268" width="54" height="6" rx="3" fill="#eee"/>
+          <circle cx="268" cy="298" r="9" fill="#fafafa" stroke="#ddd" stroke-width="1.5"/>
+          <rect x="283" y="292" width="46" height="6" rx="3" fill="#eee"/>
+          <rect x="110" y="248" width="80" height="96" rx="5" fill="white" transform="rotate(-12,150,296)"/>
+          <line x1="120" y1="262" x2="178" y2="256" stroke="#eee" stroke-width="2"/>
+          <line x1="120" y1="274" x2="178" y2="268" stroke="#eee" stroke-width="2"/>
+          <line x1="120" y1="286" x2="178" y2="280" stroke="#eee" stroke-width="2"/>
+          <line x1="120" y1="298" x2="178" y2="292" stroke="#eee" stroke-width="2"/>
+          <rect x="408" y="244" width="80" height="96" rx="5" fill="white" transform="rotate(10,448,292)"/>
+          <line x1="416" y1="258" x2="474" y2="262" stroke="#eee" stroke-width="2"/>
+          <line x1="416" y1="270" x2="474" y2="274" stroke="#eee" stroke-width="2"/>
+          <line x1="416" y1="282" x2="474" y2="286" stroke="#eee" stroke-width="2"/>
+          <rect x="446" y="72" width="104" height="96" rx="8" fill="white" stroke="#E4C1F9" stroke-width="2"/>
+          <rect x="446" y="72" width="104" height="28" rx="8" fill="#E4C1F9"/>
+          <rect x="446" y="88" width="104" height="12" fill="#E4C1F9"/>
+          <circle cx="466" cy="120" r="5" fill="#FF99C8"/>
+          <circle cx="486" cy="120" r="5" fill="#A9DEF9"/>
+          <circle cx="506" cy="120" r="5" fill="#FCF6BD"/>
+          <circle cx="526" cy="120" r="5" fill="#E4C1F9"/>
+          <circle cx="466" cy="140" r="5" fill="#D0F4DE"/>
+          <circle cx="486" cy="140" r="5" fill="#FF99C8"/>
+          <circle cx="506" cy="140" r="7" fill="#FF99C8" stroke="#d4699e" stroke-width="1.5"/>
+          <circle cx="526" cy="140" r="5" fill="#A9DEF9"/>
+          <circle cx="466" cy="158" r="5" fill="#FCF6BD"/>
+          <circle cx="486" cy="158" r="5" fill="#E4C1F9"/>
+          <circle cx="506" cy="158" r="5" fill="#D0F4DE"/>
+          <circle cx="526" cy="158" r="5" fill="#FF99C8" opacity="0.5"/>
+          <path d="M130,96 L133,106 L143,106 L135,112 L138,122 L130,116 L122,122 L125,112 L117,106 L127,106 Z" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5" opacity="0.9"/>
+          <path d="M390,78 L392,86 L400,86 L394,91 L396,99 L390,95 L384,99 L386,91 L380,86 L388,86 Z" fill="#FF99C8" opacity="0.75"/>
+        </svg>
+      </div>
+
+      <div class="service-hero-text fade-up">
+        <a href="tutoring.html" class="back-link">Back to Tutoring</a>
+        <h1>School Meeting Preparation &amp; Support</h1>
+        <p class="service-intro">School meetings can often feel overwhelming for families. This service is designed to provide guidance and clarity so families feel prepared and confident in understanding their child's needs and next steps.</p>
+      </div>
+    </div>
+
+    <div class="service-content">
+
+      <div class="fade-up">
+        <h2 class="section-heading">Support may include:</h2>
+        <div class="list-panel">
+          <ul style="padding:0; margin:0; list-style:none;">
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Reviewing student progress, reports, and school data</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Reviewing IEP, 504, and evaluation reports to support understanding of results, goals, services, and recommendations</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Explaining educational terminology and school-based recommendations</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Identifying questions and priorities ahead of meetings</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Discussing potential next steps and areas of focus</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Reviewing guidance on understanding school information and records</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>Preparation for upcoming meetings with clear action items</li>
+            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>When scheduling allows, attendance at school meetings may be available upon request in a supportive, educational role</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="goal-callout fade-up delay-2">
+        Support is focused on helping families feel prepared, informed, and confident for school meetings.
+      </div>
+
+      <div class="pricing-section fade-up delay-2">
+        <h2>Pricing &amp; Packages</h2>
+        <p class="pricing-subtitle">Flexible options designed to support your child's growth while meeting your family's needs.</p>
+        <div class="pricing-cards">
+          <div class="pricing-card">
+            <div class="price-label">Per Session</div>
+            <div class="price-amount">$75</div>
+            <div class="price-per">per hour</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">IEP/504 &amp; evaluation report review · guidance on school information · meeting preparation</div>
+          </div>
+          <div class="pricing-card">
+            <div class="price-label">4-Session Package</div>
+            <div class="price-amount">$250</div>
+            <div class="price-per">total</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">4 sessions</div>
+            <div class="savings-badge">Save $50</div>
+          </div>
+          <div class="pricing-card featured">
+            <div class="price-label">6-Session Package</div>
+            <div class="price-amount">$400</div>
+            <div class="price-per">total</div>
+            <div class="pricing-divider"></div>
+            <div class="package-desc">6 sessions</div>
+            <div class="savings-badge">Save $50</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/components-loader.js"></script>
+</body>
+</html>

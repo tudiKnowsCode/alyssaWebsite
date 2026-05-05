@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Tudino Learning</title>
+  <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .contact-page {
+      background: var(--sage);
+      min-height: calc(100vh - var(--nav-height));
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem);
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: start;
+    }
+
+    /* ── Left: info panel ── */
+    .contact-info h1 {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info .contact-intro {
+      font-family: var(--font-body);
+      font-size: clamp(0.9rem, 1.4vw, 1rem);
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-detail-item {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .contact-detail-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-item .detail-label {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-detail-item .detail-value {
+      font-family: var(--font-body);
+      font-size: clamp(0.88rem, 1.3vw, 0.95rem);
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    /* ── Right: form panel ── */
+    .contact-form-panel {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .form-panel-header {
+      background: var(--green-panel);
+      padding: 1.25rem 1.75rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+      color: var(--text-dark);
+    }
+
+    /* ── Tagline strip ── */
+    .tagline-strip {
+      background: var(--lavender);
+      color: var(--text-dark);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+      letter-spacing: 0.04em;
+      text-align: center;
+      padding: 0.85rem 1rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .tagline-strip span::before {
+      content: '✦ ';
+      opacity: 0.6;
+    }
+
+    /* Google Form embed container */
+    .form-embed {
+      width: 100%;
+      min-height: 680px;
+      position: relative;
+    }
+
+    .form-embed iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 680px;
+      border: none;
+      display: block;
+    }
+
+    /* Placeholder shown until iframe src is set */
+    .form-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      min-height: 680px;
+      background: var(--off-white);
+    }
+
+    .form-placeholder .placeholder-icon {
+      font-size: 2.5rem;
+      opacity: 0.4;
+    }
+
+    .form-placeholder h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+
+    .form-placeholder p {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      max-width: 340px;
+    }
+
+    .form-placeholder code {
+      background: rgba(26,26,26,0.08);
+      border-radius: 6px;
+      padding: 0.15rem 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-dark);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+
+  <div class="page contact-page">
+    <div class="contact-layout">
+
+      <!-- Left: info -->
+      <div class="contact-info fade-up">
+        <h1>Get in Touch</h1>
+        <p class="contact-intro">I'd love to hear from you! Whether you have questions about services, want to discuss your child's needs, or are ready to get started — fill out the form and I'll get back to you shortly.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">📍</div>
+            <div>
+              <div class="detail-label">Location</div>
+              <div class="detail-value">Serving families in the local area &amp; virtually</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">⏱️</div>
+            <div>
+              <div class="detail-label">Response Time</div>
+              <div class="detail-value">I aim to respond within 1–2 business days</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">💻</div>
+            <div>
+              <div class="detail-label">Virtual Sessions</div>
+              <div class="detail-value">Available for families who prefer to meet online</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Google Form embed -->
+      <div class="contact-form-panel fade-up delay-2">
+        <div class="form-panel-header">Send a Message</div>
+        <div class="form-embed">
+
+          <!--
+            TO EMBED YOUR GOOGLE FORM:
+            1. Open your Google Form
+            2. Click Send → Embed icon (<>)
+            3. Copy the iframe src URL
+            4. Replace the <div class="form-placeholder"> block below with:
+               <iframe src="YOUR_GOOGLE_FORM_URL" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          -->
+
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdivJKOSsa370jFmN5nDw36AQqSEHdJJRRRprMTMZ1sZ6SC5Q/viewform?embedded=true" width="640" height="1431" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="js/components-loader.js"></script>
+</body>
+</html>
