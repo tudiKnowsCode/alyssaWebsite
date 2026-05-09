@@ -9,123 +9,158 @@
   <meta name="robots" content="index, follow" />
   <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
   <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=dancing-script:400,700&family=playfair-display:700,800&family=dm-sans:400,500,600" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] }
+          fontFamily: {
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            script: ['"Dancing Script"', 'cursive'],
+            display: ['"Playfair Display"', 'serif'],
+          }
         }
       }
     }
   </script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="bg-white text-slate-900 font-sans antialiased">
-<div class="page pt-16">
+<body class="bg-[#FFF8F3] text-slate-900 font-sans antialiased">
+<div class="page">
 
   <!-- HERO -->
-  <section class="bg-slate-900 relative overflow-hidden py-20">
-    <div class="dot-pattern absolute inset-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-teal-950 opacity-90"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="tutoring.html" class="inline-flex items-center gap-1.5 text-slate-400 hover:text-teal-400 text-sm font-medium mb-6 transition-colors">
+  <section class="bg-[#FFCDB8] relative pt-12 pb-28">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="tutoring.html" class="inline-flex items-center gap-1.5 text-orange-700 hover:text-orange-900 text-sm font-medium mb-8 transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/></svg>
         Back to Services
       </a>
-      <p class="text-teal-400 text-xs font-semibold uppercase tracking-widest mb-3">Service</p>
-      <h1 class="text-5xl font-extrabold text-white tracking-tight mb-5">School Meeting<br>Preparation &amp; Support</h1>
-      <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">School meetings can often feel overwhelming for families. This service is designed to provide guidance and clarity so families feel prepared and confident in understanding their child's needs and next steps.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="font-script text-2xl text-orange-700 mb-3">Meeting Confidence</p>
+          <h1 class="font-display text-5xl text-slate-900 font-bold leading-tight mb-5">School Meeting<br/>Preparation</h1>
+          <p class="text-slate-600 text-lg leading-relaxed">School meetings can feel overwhelming. This service makes sure you walk in prepared, informed, and confident about your child's next steps.</p>
+        </div>
+        <div class="flex justify-center md:justify-end">
+          <div class="w-48 h-48 rounded-3xl bg-gradient-to-br from-orange-300 to-amber-200 flex items-center justify-center shadow-xl">
+            <svg class="w-20 h-20 text-white/70" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="w-full block">
+        <path fill="#FFF8F3" d="M0,32 C240,80 480,0 720,40 C960,80 1200,20 1440,40 L1440,80 L0,80 Z"/>
+      </svg>
     </div>
   </section>
 
   <!-- CONTENT -->
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
 
       <!-- Focus areas -->
       <div>
-        <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-6">Support may include:</h2>
-        <div class="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
-          <ul class="divide-y divide-slate-100">
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Reviewing student progress, reports, and school data</span>
-            </li>
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Reviewing IEP, 504, and evaluation reports to support understanding of results, goals, services, and recommendations</span>
-            </li>
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Explaining educational terminology and school-based recommendations</span>
-            </li>
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Identifying questions and priorities ahead of meetings</span>
-            </li>
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Discussing potential next steps and areas of focus</span>
-            </li>
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Providing guidance on understanding school information and documents</span>
-            </li>
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Preparation for upcoming meetings with clear action items and talking points</span>
-            </li>
-            <li class="flex items-start gap-4 px-7 py-4">
-              <svg class="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span class="text-slate-600 text-sm leading-relaxed">Attendance at school meetings when schedule allows</span>
-            </li>
-          </ul>
+        <p class="font-script text-2xl text-pink-500 mb-2">What we cover</p>
+        <h2 class="font-display text-3xl text-slate-900 font-bold mb-8">Support may include:</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white rounded-2xl p-6 border border-pink-50 shadow-sm flex items-start gap-4">
+            <div class="w-9 h-9 bg-[#FFCDB8] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800 text-sm mb-1">Document Review</p>
+              <p class="text-slate-500 text-xs leading-relaxed">Reviewing student progress reports, school data, and relevant records</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-pink-50 shadow-sm flex items-start gap-4">
+            <div class="w-9 h-9 bg-[#FFCDB8] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800 text-sm mb-1">IEP &amp; 504 Explanation</p>
+              <p class="text-slate-500 text-xs leading-relaxed">Understanding goals, services, accommodations, and recommendations</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-pink-50 shadow-sm flex items-start gap-4">
+            <div class="w-9 h-9 bg-[#FFCDB8] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800 text-sm mb-1">Terminology Support</p>
+              <p class="text-slate-500 text-xs leading-relaxed">Explaining educational terms and school-based recommendations in plain language</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-pink-50 shadow-sm flex items-start gap-4">
+            <div class="w-9 h-9 bg-[#FFCDB8] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800 text-sm mb-1">Question Preparation</p>
+              <p class="text-slate-500 text-xs leading-relaxed">Identifying your priorities and preparing targeted questions ahead of the meeting</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-pink-50 shadow-sm flex items-start gap-4">
+            <div class="w-9 h-9 bg-[#FFCDB8] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800 text-sm mb-1">Next Steps Planning</p>
+              <p class="text-slate-500 text-xs leading-relaxed">Discussing potential action items and areas of focus coming out of the meeting</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 border border-pink-50 shadow-sm flex items-start gap-4">
+            <div class="w-9 h-9 bg-[#FFCDB8] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-800 text-sm mb-1">Meeting Attendance</p>
+              <p class="text-slate-500 text-xs leading-relaxed">Attendance at school meetings when schedule allows to provide real-time support</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Goal callout -->
-      <div class="bg-teal-50 border border-teal-100 rounded-2xl p-8 text-center">
-        <svg class="w-8 h-8 text-teal-500 mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
-        <p class="text-slate-700 text-base leading-relaxed italic max-w-2xl mx-auto">
-          "Support is focused on helping families feel prepared, informed, and confident for school meetings."
-        </p>
+      <!-- Callout -->
+      <div class="bg-[#FFCDB8] rounded-3xl p-10 text-center">
+        <p class="font-script text-2xl text-orange-700 mb-3">The goal</p>
+        <p class="font-display text-xl text-slate-800 font-bold leading-relaxed max-w-2xl mx-auto">"Support is focused on helping families feel prepared, informed, and confident for every school meeting."</p>
       </div>
 
       <!-- Pricing -->
       <div>
-        <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-2">Pricing &amp; Packages</h2>
-        <p class="text-slate-500 text-sm mb-8">Flexible options designed to support your family's confidence and preparation.</p>
+        <p class="font-script text-2xl text-pink-500 mb-2">Investment</p>
+        <h2 class="font-display text-3xl text-slate-900 font-bold mb-2">Pricing &amp; Packages</h2>
+        <p class="text-slate-500 text-sm mb-8">Flexible options to support your family's confidence and preparation.</p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-          <div class="bg-white border border-slate-200 rounded-2xl p-7 text-center shadow-sm hover:shadow-md transition-shadow">
-            <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Per Session</p>
-            <p class="text-5xl font-extrabold text-slate-900 tracking-tight">$75</p>
+          <div class="bg-white border border-slate-100 rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+            <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Per Session</p>
+            <p class="font-display text-5xl font-bold text-slate-900">$75</p>
             <p class="text-slate-400 text-sm mt-1 mb-5">per hour</p>
             <div class="h-px bg-slate-100 mb-5"></div>
-            <p class="text-slate-600 text-sm leading-relaxed">Document review · meeting preparation · terminology support</p>
+            <p class="text-slate-500 text-sm leading-relaxed">Document review · meeting prep · terminology support</p>
           </div>
-          <div class="bg-white border border-slate-200 rounded-2xl p-7 text-center shadow-sm hover:shadow-md transition-shadow">
-            <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">4-Session Package</p>
-            <p class="text-5xl font-extrabold text-slate-900 tracking-tight">$250</p>
+          <div class="bg-white border border-slate-100 rounded-3xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+            <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">4-Session Package</p>
+            <p class="font-display text-5xl font-bold text-slate-900">$250</p>
             <p class="text-slate-400 text-sm mt-1 mb-5">total</p>
             <div class="h-px bg-slate-100 mb-5"></div>
-            <p class="text-slate-600 text-sm mb-3">4 sessions</p>
-            <span class="inline-block bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full">Save $50</span>
+            <p class="text-slate-500 text-sm mb-3">4 sessions</p>
+            <span class="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full">Save $50</span>
           </div>
-          <div class="bg-teal-600 rounded-2xl p-7 text-center shadow-lg shadow-teal-600/20 relative">
+          <div class="bg-pink-600 rounded-3xl p-8 text-center shadow-lg shadow-pink-600/20 relative">
             <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Best Value</span>
-            <p class="text-xs font-semibold uppercase tracking-widest text-teal-200 mb-3">6-Session Package</p>
-            <p class="text-5xl font-extrabold text-white tracking-tight">$400</p>
-            <p class="text-teal-200 text-sm mt-1 mb-5">total</p>
-            <div class="h-px bg-teal-500 mb-5"></div>
-            <p class="text-teal-100 text-sm mb-3">6 sessions</p>
+            <p class="text-xs font-semibold uppercase tracking-widest text-pink-200 mb-4">6-Session Package</p>
+            <p class="font-display text-5xl font-bold text-white">$400</p>
+            <p class="text-pink-200 text-sm mt-1 mb-5">total</p>
+            <div class="h-px bg-pink-500 mb-5"></div>
+            <p class="text-pink-100 text-sm mb-3">6 sessions</p>
             <span class="inline-block bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">Save $50</span>
           </div>
         </div>
-
-        <div class="mt-8 text-center">
-          <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-3.5 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors">
+        <div class="text-center mt-10">
+          <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-3.5 bg-pink-600 text-white font-semibold rounded-full hover:bg-pink-700 transition-colors">
             Get Started Today
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>

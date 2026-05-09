@@ -1,39 +1,40 @@
-<nav class="fixed top-0 left-0 right-0 z-50 h-16 bg-white/95 backdrop-blur-sm border-b border-slate-100 shadow-sm" role="navigation" aria-label="Main navigation">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+<nav class="fixed top-0 left-0 right-0 z-50" role="navigation" aria-label="Main navigation">
 
-    <!-- Logo -->
-    <a href="index.html" class="flex-shrink-0" aria-label="Tudino Learning — Home">
-      <img src="images/logos/nav.svg" alt="Tudino Learning" class="h-9">
-    </a>
-
-    <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center gap-1">
-      <a href="index.html" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-all duration-150">Home</a>
-      <a href="about.html" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-all duration-150">About</a>
-      <a href="tutoring.html" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-all duration-150">Services</a>
-      <a href="testimonials.html" class="nav-link px-3.5 py-2 text-sm font-medium text-slate-600 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-all duration-150">Testimonials</a>
-      <a href="contact.html" class="nav-link ml-3 px-5 py-2 bg-teal-600 text-white text-sm font-semibold rounded-lg hover:bg-teal-700 transition-colors duration-150">Get in Touch</a>
-    </div>
-
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors" aria-label="Toggle navigation menu" aria-expanded="false">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 py-3 space-y-1">
-      <a href="index.html" class="nav-link block py-2.5 px-4 text-sm font-medium text-slate-700 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-colors">Home</a>
-      <a href="about.html" class="nav-link block py-2.5 px-4 text-sm font-medium text-slate-700 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-colors">About</a>
-      <a href="tutoring.html" class="nav-link block py-2.5 px-4 text-sm font-medium text-slate-700 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-colors">Services</a>
-      <a href="testimonials.html" class="nav-link block py-2.5 px-4 text-sm font-medium text-slate-700 hover:text-teal-600 hover:bg-slate-50 rounded-lg transition-colors">Testimonials</a>
-      <div class="pt-1.5 pb-1">
-        <a href="contact.html" class="nav-link block py-2.5 px-4 bg-teal-600 text-white text-sm font-semibold rounded-lg hover:bg-teal-700 text-center transition-colors">Get in Touch</a>
-      </div>
+  <!-- Bar 1: Cream background with centered script logo -->
+  <div class="bg-[#FFF8F3]">
+    <div class="max-w-6xl mx-auto px-4 py-3.5 relative flex items-center justify-center">
+      <a href="index.html" aria-label="Tudino Learning — Home" class="hover:opacity-80 transition-opacity">
+        <img src="images/logos/nav.svg" alt="Tudino Learning" class="h-12 w-auto" />
+      </a>
+      <!-- Mobile hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 text-pink-600 hover:text-pink-800 transition-colors" aria-label="Open menu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
   </div>
+
+  <!-- Bar 2: Pink links bar — desktop only -->
+  <div class="bg-pink-600 hidden md:block">
+    <div class="max-w-6xl mx-auto px-4 py-2.5 flex justify-center items-center gap-8">
+      <a href="index.html" class="nav-link text-white text-sm font-medium hover:text-pink-200 transition-colors tracking-wide">Home</a>
+      <a href="about.html" class="nav-link text-white text-sm font-medium hover:text-pink-200 transition-colors tracking-wide">About</a>
+      <a href="tutoring.html" class="nav-link text-white text-sm font-medium hover:text-pink-200 transition-colors tracking-wide">Services</a>
+      <a href="testimonials.html" class="nav-link text-white text-sm font-medium hover:text-pink-200 transition-colors tracking-wide">Testimonials</a>
+      <a href="contact.html" class="nav-link text-white text-sm font-medium hover:text-pink-200 transition-colors tracking-wide">Contact</a>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu" class="hidden bg-pink-600 md:hidden border-t border-pink-500">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
+      <a href="index.html" class="nav-link text-white text-base font-medium py-2.5 px-3 rounded-lg hover:bg-pink-700 transition-colors">Home</a>
+      <a href="about.html" class="nav-link text-white text-base font-medium py-2.5 px-3 rounded-lg hover:bg-pink-700 transition-colors">About</a>
+      <a href="tutoring.html" class="nav-link text-white text-base font-medium py-2.5 px-3 rounded-lg hover:bg-pink-700 transition-colors">Services</a>
+      <a href="testimonials.html" class="nav-link text-white text-base font-medium py-2.5 px-3 rounded-lg hover:bg-pink-700 transition-colors">Testimonials</a>
+      <a href="contact.html" class="nav-link text-white text-base font-medium py-2.5 px-3 rounded-lg hover:bg-pink-700 transition-colors">Contact</a>
+    </div>
+  </div>
+
 </nav>

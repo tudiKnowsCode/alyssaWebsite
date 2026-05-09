@@ -1,33 +1,70 @@
-/* Tudino Learning — Stylesheet v2 */
+/* Tudino Learning — Stylesheet v3 */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  background-color: #FFF8F3;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  background-color: #99f6e4;
-  color: #0f172a;
+/* Two-bar fixed nav height offset */
+.page {
+  padding-top: 110px;
 }
 
-/* Active nav link — toggled by components-loader.js */
+@media (max-width: 767px) {
+  .page {
+    padding-top: 72px;
+  }
+}
+
+/* Active nav link */
 .nav-link.active {
-  color: #0d9488 !important;
-  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 700 !important;
 }
 
-/* Dot-grid hero background */
-.dot-pattern {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
-  background-size: 28px 28px;
+/* Text selection color */
+::selection {
+  background: #fce7f3;
+  color: #9d174d;
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #f9a8d4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ec4899;
+}
+
+/* Wavy divider helper */
+.wave-divider {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  pointer-events: none;
+}
+.wave-divider svg {
+  display: block;
+}
+
+/* Tagline strip scrolling ticker (optional) */
+.tagline-track {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+}

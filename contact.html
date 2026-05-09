@@ -9,49 +9,57 @@
   <meta name="robots" content="index, follow" />
   <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
   <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=dancing-script:400,700&family=playfair-display:700,800&family=dm-sans:400,500,600" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] }
+          fontFamily: {
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            script: ['"Dancing Script"', 'cursive'],
+            display: ['"Playfair Display"', 'serif'],
+          }
         }
       }
     }
   </script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="bg-white text-slate-900 font-sans antialiased">
-<div class="page pt-16">
+<body class="bg-[#FFF8F3] text-slate-900 font-sans antialiased">
+<div class="page">
 
-  <!-- PAGE HEADER -->
-  <section class="bg-slate-900 relative overflow-hidden py-20">
-    <div class="dot-pattern absolute inset-0"></div>
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-teal-950 opacity-90"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="text-teal-400 text-xs font-semibold uppercase tracking-widest mb-3">Reach Out</p>
-      <h1 class="text-5xl font-extrabold text-white tracking-tight mb-4">Get in Touch</h1>
-      <p class="text-slate-300 text-lg max-w-xl leading-relaxed">I'd love to hear from you! Fill out the form and I'll get back to you within 1–2 business days.</p>
+  <!-- HERO -->
+  <section class="bg-pink-600 relative pt-16 pb-28">
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="font-script text-2xl text-pink-200 mb-3">Reach out</p>
+      <h1 class="font-display text-5xl text-white font-bold mb-5">Get in Touch</h1>
+      <p class="text-pink-100 text-lg max-w-xl mx-auto leading-relaxed">I'd love to hear from you! Fill out the form and I'll get back to you within 1–2 business days.</p>
+    </div>
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" class="w-full block">
+        <path fill="#FFF8F3" d="M0,32 C240,80 480,0 720,40 C960,80 1200,20 1440,40 L1440,80 L0,80 Z"/>
+      </svg>
     </div>
   </section>
 
   <!-- CONTACT LAYOUT -->
-  <section class="py-20 bg-white">
+  <section class="py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
 
         <!-- Left: Info panel -->
         <div class="lg:col-span-2 space-y-6">
           <div>
-            <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">Contact Information</h2>
+            <p class="font-script text-2xl text-pink-500 mb-2">Contact Information</p>
+            <h2 class="font-display text-2xl text-slate-900 font-bold mb-3">Let's Start a Conversation</h2>
             <p class="text-slate-500 text-sm leading-relaxed">Whether you have questions about services, want to discuss your child's needs, or are ready to get started — reach out and I'll be happy to help.</p>
           </div>
 
           <div class="space-y-4">
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100">
-              <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-pink-50 shadow-sm">
+              <div class="w-10 h-10 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
               </div>
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-1">Location</p>
@@ -59,9 +67,9 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100">
-              <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-pink-50 shadow-sm">
+              <div class="w-10 h-10 bg-[#C8F5EC] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-1">Response Time</p>
@@ -69,9 +77,9 @@
               </div>
             </div>
 
-            <div class="flex items-start gap-4 p-5 bg-slate-50 rounded-xl border border-slate-100">
-              <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>
+            <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-pink-50 shadow-sm">
+              <div class="w-10 h-10 bg-[#FFCDB8] rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>
               </div>
               <div>
                 <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-1">Virtual Sessions</p>
@@ -81,20 +89,20 @@
           </div>
 
           <!-- Quick links to services -->
-          <div class="pt-4">
+          <div class="pt-2">
             <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Explore Services</p>
             <div class="space-y-2">
-              <a href="tutoring-skill-building.html" class="flex items-center justify-between p-3.5 bg-white border border-slate-100 rounded-lg hover:border-teal-200 hover:bg-teal-50 transition-colors group">
-                <span class="text-slate-700 text-sm font-medium group-hover:text-teal-700">Skill Building — from $120/hr</span>
-                <svg class="w-4 h-4 text-slate-400 group-hover:text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              <a href="tutoring-skill-building.html" class="flex items-center justify-between p-3.5 bg-white border border-slate-100 rounded-xl hover:border-pink-200 hover:bg-pink-50 transition-colors group">
+                <span class="text-slate-700 text-sm font-medium group-hover:text-pink-700">Skill Building — from $120/hr</span>
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <a href="tutoring-guided-support.html" class="flex items-center justify-between p-3.5 bg-white border border-slate-100 rounded-lg hover:border-teal-200 hover:bg-teal-50 transition-colors group">
-                <span class="text-slate-700 text-sm font-medium group-hover:text-teal-700">Guided Support — from $160/hr</span>
-                <svg class="w-4 h-4 text-slate-400 group-hover:text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              <a href="tutoring-guided-support.html" class="flex items-center justify-between p-3.5 bg-white border border-slate-100 rounded-xl hover:border-pink-200 hover:bg-pink-50 transition-colors group">
+                <span class="text-slate-700 text-sm font-medium group-hover:text-pink-700">Guided Support — from $160/hr</span>
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <a href="tutoring-meeting-support.html" class="flex items-center justify-between p-3.5 bg-white border border-slate-100 rounded-lg hover:border-teal-200 hover:bg-teal-50 transition-colors group">
-                <span class="text-slate-700 text-sm font-medium group-hover:text-teal-700">Meeting Prep — from $75/hr</span>
-                <svg class="w-4 h-4 text-slate-400 group-hover:text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              <a href="tutoring-meeting-support.html" class="flex items-center justify-between p-3.5 bg-white border border-slate-100 rounded-xl hover:border-pink-200 hover:bg-pink-50 transition-colors group">
+                <span class="text-slate-700 text-sm font-medium group-hover:text-pink-700">Meeting Prep — from $75/hr</span>
+                <svg class="w-4 h-4 text-slate-400 group-hover:text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
@@ -102,9 +110,9 @@
 
         <!-- Right: Google Form embed -->
         <div class="lg:col-span-3">
-          <div class="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
-            <div class="px-7 py-5 border-b border-slate-100 bg-slate-50 flex items-center gap-3">
-              <div class="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
+          <div class="bg-white border border-pink-100 rounded-3xl shadow-sm overflow-hidden">
+            <div class="px-7 py-5 border-b border-pink-50 bg-pink-50 flex items-center gap-3">
+              <div class="w-9 h-9 bg-pink-600 rounded-xl flex items-center justify-center">
                 <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
               </div>
               <div>
