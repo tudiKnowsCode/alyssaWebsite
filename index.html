@@ -4,7 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tudino Learning</title>
+  <title>Tudino Learning — Individualized Tutoring &amp; Family Support</title>
+  <meta name="description" content="Tudino Learning offers individualized tutoring and family support with Alyssa Tudino, a certified learning specialist with 7 years of special education experience." />
+  <meta name="author" content="Alyssa Tudino" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#DDD0F5" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tudino Learning" />
+  <meta property="og:title" content="Tudino Learning — Individualized Tutoring &amp; Family Support" />
+  <meta property="og:description" content="Tudino Learning offers individualized tutoring and family support with Alyssa Tudino, a certified learning specialist with 7 years of special education experience." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tudino Learning — Individualized Tutoring &amp; Family Support" />
+  <meta name="twitter:description" content="Tudino Learning offers individualized tutoring and family support with Alyssa Tudino, a certified learning specialist with 7 years of special education experience." />
   <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
   <link rel="stylesheet" href="css/styles.css" />
   <style>
@@ -19,11 +30,11 @@
     .hero {
       flex: 1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.1fr;
       align-items: center;
-      gap: clamp(1.5rem, 3vw, 3rem);
-      padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 6vw, 5rem);
-      max-width: 1200px;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+      max-width: 1500px;
       margin: 0 auto;
       width: 100%;
     }
@@ -52,7 +63,7 @@
       font-size: clamp(1rem, 2.5vw, 1.35rem);
       color: var(--green);
       line-height: 1.35;
-      max-width: 320px;
+      max-width: 440px;
     }
 
     .hero-text .cta-row {
@@ -70,7 +81,6 @@
 
     .hero-image .photo-frame {
       width: 100%;
-      max-width: 460px;
     }
 
     .landscape-svg {
@@ -89,40 +99,19 @@
       margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
     }
 
-    /* ── Tagline strip ── */
-    .tagline-strip {
-      background: var(--lavender);
-      color: var(--text-dark);
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-      letter-spacing: 0.04em;
-      text-align: center;
-      padding: 0.85rem 1rem;
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .tagline-strip span::before {
-      content: '✦ ';
-      opacity: 0.6;
-    }
 
     /* ── What I Do section ── */
     .what-i-do {
       background: var(--sage);
-      padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 6vw, 5rem);
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
     }
 
     .what-i-do-inner {
-      max-width: 1200px;
+      max-width: 1500px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(1.5rem, 3vw, 3rem);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
       align-items: center;
     }
 
@@ -227,48 +216,51 @@
       <div class="hero-image fade-up delay-2">
         <div class="photo-frame">
           <!-- Image placeholder — replace with real photo -->
-          <svg class="landscape-svg" viewBox="0 0 460 345" xmlns="http://www.w3.org/2000/svg" aria-label="Cozy study corner with books, lamp, and plant">
-            <rect width="460" height="345" fill="#EDF9F2"/>
-            <circle cx="390" cy="45" r="82" fill="#A9DEF9" opacity="0.22"/>
-            <circle cx="42" cy="308" r="62" fill="#E4C1F9" opacity="0.28"/>
-            <rect x="40" y="212" width="380" height="14" rx="5" fill="#dbb896"/>
-            <rect x="58" y="226" width="14" height="74" rx="4" fill="#c9a47e"/>
-            <rect x="388" y="226" width="14" height="74" rx="4" fill="#c9a47e"/>
-            <rect x="97" y="120" width="7" height="93" rx="3" fill="#ddd"/>
-            <ellipse cx="100" cy="215" rx="18" ry="5" fill="#ccc"/>
-            <polygon points="70,120 130,120 118,150 82,150" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5"/>
-            <ellipse cx="100" cy="174" rx="50" ry="25" fill="#FCF6BD" opacity="0.18"/>
-            <rect x="146" y="170" width="80" height="44" rx="4" fill="#FCF6BD"/>
-            <rect x="226" y="170" width="80" height="44" rx="4" fill="#fafafa"/>
-            <rect x="222" y="167" width="8" height="50" rx="2" fill="#d4c84a"/>
-            <line x1="161" y1="183" x2="218" y2="183" stroke="#ccc" stroke-width="1.5"/>
-            <line x1="161" y1="193" x2="218" y2="193" stroke="#ccc" stroke-width="1.5"/>
-            <line x1="161" y1="203" x2="218" y2="203" stroke="#ccc" stroke-width="1.5"/>
-            <line x1="238" y1="183" x2="296" y2="183" stroke="#ccc" stroke-width="1.5"/>
-            <line x1="238" y1="193" x2="296" y2="193" stroke="#ccc" stroke-width="1.5"/>
-            <line x1="238" y1="203" x2="296" y2="203" stroke="#ccc" stroke-width="1.5"/>
+          <svg class="landscape-svg" viewBox="0 0 460 345" xmlns="http://www.w3.org/2000/svg"
+            aria-label="Cozy study corner with books, lamp, and plant">
+            <rect width="460" height="345" fill="#EDF9F2" />
+            <circle cx="390" cy="45" r="82" fill="#A9DEF9" opacity="0.22" />
+            <circle cx="42" cy="308" r="62" fill="#E4C1F9" opacity="0.28" />
+            <rect x="40" y="212" width="380" height="14" rx="5" fill="#dbb896" />
+            <rect x="58" y="226" width="14" height="74" rx="4" fill="#c9a47e" />
+            <rect x="388" y="226" width="14" height="74" rx="4" fill="#c9a47e" />
+            <rect x="97" y="120" width="7" height="93" rx="3" fill="#ddd" />
+            <ellipse cx="100" cy="215" rx="18" ry="5" fill="#ccc" />
+            <polygon points="70,120 130,120 118,150 82,150" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5" />
+            <ellipse cx="100" cy="174" rx="50" ry="25" fill="#FCF6BD" opacity="0.18" />
+            <rect x="146" y="170" width="80" height="44" rx="4" fill="#FCF6BD" />
+            <rect x="226" y="170" width="80" height="44" rx="4" fill="#fafafa" />
+            <rect x="222" y="167" width="8" height="50" rx="2" fill="#d4c84a" />
+            <line x1="161" y1="183" x2="218" y2="183" stroke="#ccc" stroke-width="1.5" />
+            <line x1="161" y1="193" x2="218" y2="193" stroke="#ccc" stroke-width="1.5" />
+            <line x1="161" y1="203" x2="218" y2="203" stroke="#ccc" stroke-width="1.5" />
+            <line x1="238" y1="183" x2="296" y2="183" stroke="#ccc" stroke-width="1.5" />
+            <line x1="238" y1="193" x2="296" y2="193" stroke="#ccc" stroke-width="1.5" />
+            <line x1="238" y1="203" x2="296" y2="203" stroke="#ccc" stroke-width="1.5" />
             <g transform="translate(315,164) rotate(28)">
-              <rect x="-4" y="0" width="9" height="52" rx="2" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1"/>
-              <rect x="-4" y="0" width="9" height="11" rx="2" fill="#FF99C8"/>
-              <rect x="-4" y="10" width="9" height="3" fill="#d4699e"/>
-              <polygon points="-4,52 5,52 0.5,64" fill="#d4a870"/>
-              <polygon points="-1.5,55 1.5,55 0.5,64" fill="#555"/>
+              <rect x="-4" y="0" width="9" height="52" rx="2" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1" />
+              <rect x="-4" y="0" width="9" height="11" rx="2" fill="#FF99C8" />
+              <rect x="-4" y="10" width="9" height="3" fill="#d4699e" />
+              <polygon points="-4,52 5,52 0.5,64" fill="#d4a870" />
+              <polygon points="-1.5,55 1.5,55 0.5,64" fill="#555" />
             </g>
-            <rect x="48" y="176" width="58" height="14" rx="3" fill="#FF99C8"/>
-            <rect x="48" y="176" width="9" height="14" rx="3" fill="#d4699e"/>
-            <rect x="52" y="164" width="54" height="12" rx="3" fill="#A9DEF9"/>
-            <rect x="52" y="164" width="9" height="12" rx="3" fill="#74b8e8"/>
-            <rect x="56" y="154" width="48" height="10" rx="3" fill="#E4C1F9"/>
-            <rect x="56" y="154" width="9" height="10" rx="3" fill="#b890d4"/>
-            <rect x="348" y="172" width="12" height="42" rx="4" fill="#FF99C8"/>
-            <ellipse cx="354" cy="215" rx="18" ry="6" fill="#d4699e" opacity="0.45"/>
-            <ellipse cx="354" cy="170" rx="10" ry="18" fill="#D0F4DE"/>
-            <ellipse cx="341" cy="178" rx="8" ry="13" fill="#b8ead0" transform="rotate(-22,341,178)"/>
-            <ellipse cx="367" cy="178" rx="8" ry="13" fill="#b8ead0" transform="rotate(22,367,178)"/>
-            <path d="M354,76 L357,87 L368,87 L359,94 L362,105 L354,98 L346,105 L349,94 L340,87 L351,87 Z" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5" opacity="0.9"/>
-            <path d="M258,50 L260,59 L269,59 L262,64 L265,73 L258,68 L251,73 L254,64 L247,59 L256,59 Z" fill="#FF99C8" opacity="0.75"/>
-            <circle cx="186" cy="78" r="5" fill="#E4C1F9" opacity="0.7"/>
-            <circle cx="416" cy="130" r="5" fill="#D0F4DE" opacity="0.6"/>
+            <rect x="48" y="176" width="58" height="14" rx="3" fill="#FF99C8" />
+            <rect x="48" y="176" width="9" height="14" rx="3" fill="#d4699e" />
+            <rect x="52" y="164" width="54" height="12" rx="3" fill="#A9DEF9" />
+            <rect x="52" y="164" width="9" height="12" rx="3" fill="#74b8e8" />
+            <rect x="56" y="154" width="48" height="10" rx="3" fill="#E4C1F9" />
+            <rect x="56" y="154" width="9" height="10" rx="3" fill="#b890d4" />
+            <rect x="348" y="172" width="12" height="42" rx="4" fill="#FF99C8" />
+            <ellipse cx="354" cy="215" rx="18" ry="6" fill="#d4699e" opacity="0.45" />
+            <ellipse cx="354" cy="170" rx="10" ry="18" fill="#D0F4DE" />
+            <ellipse cx="341" cy="178" rx="8" ry="13" fill="#b8ead0" transform="rotate(-22,341,178)" />
+            <ellipse cx="367" cy="178" rx="8" ry="13" fill="#b8ead0" transform="rotate(22,367,178)" />
+            <path d="M354,76 L357,87 L368,87 L359,94 L362,105 L354,98 L346,105 L349,94 L340,87 L351,87 Z" fill="#FCF6BD"
+              stroke="#d4c84a" stroke-width="1.5" opacity="0.9" />
+            <path d="M258,50 L260,59 L269,59 L262,64 L265,73 L258,68 L251,73 L254,64 L247,59 L256,59 Z" fill="#FF99C8"
+              opacity="0.75" />
+            <circle cx="186" cy="78" r="5" fill="#E4C1F9" opacity="0.7" />
+            <circle cx="416" cy="130" r="5" fill="#D0F4DE" opacity="0.6" />
           </svg>
         </div>
       </div>
