@@ -7,449 +7,162 @@
   <meta name="description" content="Explore tutoring and support services from Tudino Learning — Academic Skill Building, Guided Support with teacher collaboration, and School Meeting Preparation." />
   <meta name="author" content="Alyssa Tudino" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#DDD0F5" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Tudino Learning" />
-  <meta property="og:title" content="Tutoring &amp; Support Services — Tudino Learning" />
-  <meta property="og:description" content="Explore tutoring and support services from Tudino Learning — Academic Skill Building, Guided Support with teacher collaboration, and School Meeting Preparation." />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tutoring &amp; Support Services — Tudino Learning" />
-  <meta name="twitter:description" content="Explore tutoring and support services from Tudino Learning — Academic Skill Building, Guided Support with teacher collaboration, and School Meeting Preparation." />
   <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    .tutoring-page {
-      background: var(--sage);
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      flex-direction: column;
-    }
-
-    .tutoring-content {
-      flex: 1;
-      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem);
-      max-width: 1240px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    /* ── What to Expect ── */
-    .expect-section {
-      margin-bottom: clamp(3rem, 6vw, 5rem);
-    }
-
-    .expect-section h2 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2rem, 5vw, 3rem);
-      letter-spacing: -0.03em;
-      color: var(--text-dark);
-      margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
-    }
-
-    /* Single unified panel */
-    .expect-panel {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-    }
-
-    .expect-row {
-      display: grid;
-      grid-template-columns: 2.5rem 1fr;
-      gap: 1rem;
-      align-items: start;
-      padding: clamp(1.1rem, 2.5vw, 1.5rem) clamp(1.5rem, 3vw, 2rem);
-    }
-
-    .expect-row + .expect-row {
-      border-top: 1.5px solid rgba(26,26,26,0.07);
-    }
-
-    /* Lavender tint for Virtual row */
-    .expect-row.highlight {
-      background: var(--lavender);
-    }
-
-    .expect-icon {
-      font-size: 1.35rem;
-      line-height: 1;
-      padding-top: 0.15rem;
-    }
-
-    .expect-text h3 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(0.92rem, 1.5vw, 1rem);
-      color: var(--text-dark);
-      margin-bottom: 0.25rem;
-      line-height: 1.3;
-    }
-
-    .expect-text p {
-      font-family: var(--font-body);
-      font-size: clamp(0.83rem, 1.2vw, 0.93rem);
-      color: var(--text-mid);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-
-    /* ── Services section ── */
-    .services-section {
-      margin-bottom: clamp(2rem, 4vw, 3rem);
-    }
-
-    .services-header {
-      margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
-    }
-
-    .services-header h2 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2rem, 5vw, 3rem);
-      letter-spacing: -0.03em;
-      color: var(--text-dark);
-      margin-bottom: 0.4rem;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-
-    .service-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: clamp(1.5rem, 2.5vw, 2rem);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-
-    .service-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
-    }
-
-    /* Image placeholder */
-    .service-card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: var(--radius-sm);
-      background: linear-gradient(180deg, #b8daf0 0%, #c8e8f5 55%, #a8c8e8 70%, #90c46e 70%, #7db560 100%);
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.7);
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .service-card-img svg {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0; left: 0;
-    }
-
-    .service-card h3 {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(0.95rem, 1.6vw, 1.1rem);
-      color: var(--pink);
-      line-height: 1.3;
-    }
-
-    .service-card p {
-      font-family: var(--font-body);
-      font-size: clamp(0.83rem, 1.2vw, 0.93rem);
-      color: var(--text-mid);
-      line-height: 1.7;
-      flex: 1;
-    }
-
-    .service-card-footer {
-      margin-top: 0.5rem;
-    }
-
-    /* Tagline banner */
-    .tutoring-tagline {
-      background: transparent;
-      border-radius: var(--radius-md);
-      padding: clamp(1.25rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem);
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-
-    .tutoring-tagline p {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1rem, 2.2vw, 1.3rem);
-      color: var(--text-dark);
-      line-height: 1.45;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* Divider */
-    .section-divider {
-      height: 2px;
-      background: rgba(26,26,26,0.1);
-      border-radius: 2px;
-      margin-bottom: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .services-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .services-grid .service-card:last-child {
-        grid-column: 1 / -1;
-        max-width: 420px;
-        margin: 0 auto;
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 580px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      .services-grid .service-card:last-child {
-        grid-column: auto;
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
-<body>
+<body class="bg-white text-slate-900 font-sans antialiased">
+<div class="page pt-16">
 
-
-
-  <!-- PAGE -->
-  <div class="page tutoring-page">
-    <div class="tutoring-content">
-
-            <!-- ── TUTORING & SUPPORT SERVICES ── -->
-      <section class="services-section" aria-label="Tutoring and Support Services">
-        <div class="services-header fade-up">
-          <h2>Tutoring &amp; Support Services</h2>
-        </div>
-
-        <!-- Tagline -->
-        <div class="tutoring-tagline fade-up delay-4">
-          <p>Every service is designed to support students academically while helping families feel informed, connected, and confident in their child's learning journey.</p>
-        </div>
-
-        <div class="services-grid">
-
-          <!-- Card 1: Academic Tutoring & Skill Building -->
-          <div class="service-card fade-up delay-1">
-            <div class="service-card-img" aria-label="Stack of colorful books with a pencil">
-              <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Background -->
-                <rect width="400" height="225" fill="#EBF5FF"/>
-                <circle cx="355" cy="38" r="68" fill="#A9DEF9" opacity="0.35"/>
-                <circle cx="48" cy="198" r="52" fill="#D0F4DE" opacity="0.4"/>
-                <!-- Book stack -->
-                <rect x="108" y="152" width="158" height="26" rx="6" fill="#FF99C8"/>
-                <rect x="108" y="152" width="13" height="26" rx="4" fill="#d4699e"/>
-                <rect x="116" y="124" width="142" height="26" rx="6" fill="#A9DEF9"/>
-                <rect x="116" y="124" width="13" height="26" rx="4" fill="#74b8e8"/>
-                <rect x="124" y="96" width="126" height="26" rx="6" fill="#FCF6BD"/>
-                <rect x="124" y="96" width="13" height="26" rx="4" fill="#d4c84a"/>
-                <rect x="132" y="68" width="110" height="26" rx="6" fill="#E4C1F9"/>
-                <rect x="132" y="68" width="13" height="26" rx="4" fill="#b890d4"/>
-                <!-- Pencil -->
-                <g transform="translate(290,55) rotate(18)">
-                  <rect x="-7" y="0" width="14" height="82" rx="3" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5"/>
-                  <rect x="-7" y="0" width="14" height="16" rx="3" fill="#FF99C8"/>
-                  <rect x="-7" y="13" width="14" height="4" fill="#d4699e"/>
-                  <polygon points="-7,82 7,82 0,98" fill="#d4a870"/>
-                  <polygon points="-2,86 2,86 0,98" fill="#666"/>
-                </g>
-                <!-- Star -->
-                <path d="M88,62 L92,75 L106,75 L95,83 L99,96 L88,88 L77,96 L81,83 L70,75 L84,75 Z" fill="#FCF6BD" stroke="#d4c84a" stroke-width="1.5"/>
-                <!-- Dots -->
-                <circle cx="84" cy="144" r="5" fill="#E4C1F9" opacity="0.7"/>
-                <circle cx="342" cy="178" r="6" fill="#FF99C8" opacity="0.45"/>
-                <circle cx="48" cy="92" r="4" fill="#A9DEF9" opacity="0.6"/>
-              </svg>
-            </div>
-            <h3>Academic Tutoring &amp; Skill Building</h3>
-            <p>Personalized tutoring designed to strengthen academic skills, build confidence, and support what students are learning in school.</p>
-            <div class="service-card-footer">
-              <a href="tutoring-skill-building.html" class="btn">Learn More</a>
-            </div>
-          </div>
-
-          <!-- Card 2: Academic Tutoring & Guided Support -->
-          <div class="service-card fade-up delay-2">
-            <div class="service-card-img" aria-label="Speech bubbles representing guided communication between student and family">
-              <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Background -->
-                <rect width="400" height="225" fill="#E6FAF0"/>
-                <circle cx="42" cy="44" r="62" fill="#D0F4DE" opacity="0.55"/>
-                <circle cx="368" cy="196" r="58" fill="#A9DEF9" opacity="0.3"/>
-                <!-- Central speech bubble -->
-                <path d="M 98,30 Q 98,14 114,14 L 286,14 Q 302,14 302,30 L 302,128 Q 302,144 286,144 L 214,144 L 200,168 L 186,144 L 114,144 Q 98,144 98,128 Z" fill="white" stroke="#c8eedd" stroke-width="2"/>
-                <!-- Open book inside bubble -->
-                <path d="M 155,58 Q 170,52 200,52 L 200,118 Q 170,112 155,118 Z" fill="#FCF6BD"/>
-                <path d="M 245,58 Q 230,52 200,52 L 200,118 Q 230,112 245,118 Z" fill="#E4C1F9"/>
-                <rect x="198" y="52" width="4" height="66" rx="2" fill="#c8a8d8"/>
-                <line x1="165" y1="74" x2="193" y2="71" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
-                <line x1="165" y1="86" x2="193" y2="83" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
-                <line x1="165" y1="98" x2="193" y2="95" stroke="#FF99C8" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-                <line x1="207" y1="71" x2="235" y2="74" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
-                <line x1="207" y1="83" x2="235" y2="86" stroke="#ddd" stroke-width="2" stroke-linecap="round"/>
-                <line x1="207" y1="95" x2="235" y2="98" stroke="#A9DEF9" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-                <!-- Left mini bubble (student) -->
-                <path d="M 28,108 Q 28,93 40,93 L 84,93 Q 96,93 96,108 L 96,138 Q 96,153 84,153 L 58,153 L 50,166 L 46,153 L 40,153 Q 28,153 28,138 Z" fill="#FF99C8" opacity="0.9"/>
-                <circle cx="48" cy="123" r="4" fill="white"/>
-                <circle cx="62" cy="123" r="4" fill="white"/>
-                <circle cx="76" cy="123" r="4" fill="white"/>
-                <!-- Right mini bubble (school) -->
-                <path d="M 304,108 Q 304,93 316,93 L 360,93 Q 372,93 372,108 L 372,138 Q 372,153 360,153 L 350,153 L 346,166 L 338,153 L 316,153 Q 304,153 304,138 Z" fill="#A9DEF9" opacity="0.9"/>
-                <polyline points="318,123 328,133 354,114" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <!-- Dots -->
-                <circle cx="338" cy="36" r="5" fill="#FF99C8" opacity="0.5"/>
-                <circle cx="60" cy="188" r="4" fill="#E4C1F9" opacity="0.6"/>
-              </svg>
-            </div>
-            <h3>Academic Tutoring &amp; Guided Support</h3>
-            <p>A collaborative approach that helps align tutoring with classroom learning and keeps families informed and supported.</p>
-            <div class="service-card-footer">
-              <a href="tutoring-guided-support.html" class="btn">Learn More</a>
-            </div>
-          </div>
-
-          <!-- Card 3: School Meeting Support -->
-          <div class="service-card fade-up delay-3">
-            <div class="service-card-img" aria-label="Clipboard with checklist representing school meeting preparation">
-              <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <!-- Background -->
-                <rect width="400" height="225" fill="#F3EAFF"/>
-                <circle cx="375" cy="42" r="64" fill="#E4C1F9" opacity="0.38"/>
-                <circle cx="32" cy="196" r="50" fill="#D0F4DE" opacity="0.42"/>
-                <!-- Clipboard body -->
-                <rect x="118" y="42" width="164" height="166" rx="10" fill="white" stroke="#e0d4f4" stroke-width="2"/>
-                <!-- Clipboard clip top -->
-                <rect x="166" y="32" width="68" height="24" rx="8" fill="#E4C1F9" stroke="#c8a4e8" stroke-width="1.5"/>
-                <rect x="180" y="26" width="40" height="18" rx="9" fill="#c8a4e8"/>
-                <!-- Checklist rows -->
-                <rect x="136" y="78" width="128" height="20" rx="5" fill="#F3EAFF"/>
-                <circle cx="151" cy="88" r="8" fill="#E4C1F9"/>
-                <polyline points="146,88 150,92 158,83" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <rect x="166" y="83" width="78" height="9" rx="3" fill="#c8a4e8" opacity="0.45"/>
-                <rect x="136" y="108" width="128" height="20" rx="5" fill="#F3EAFF"/>
-                <circle cx="151" cy="118" r="8" fill="#FF99C8"/>
-                <polyline points="146,118 150,122 158,113" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <rect x="166" y="113" width="86" height="9" rx="3" fill="#f0a0c0" opacity="0.45"/>
-                <rect x="136" y="138" width="128" height="20" rx="5" fill="#F3EAFF"/>
-                <circle cx="151" cy="148" r="8" fill="#A9DEF9"/>
-                <polyline points="146,148 150,152 158,143" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <rect x="166" y="143" width="62" height="9" rx="3" fill="#80b8e0" opacity="0.45"/>
-                <rect x="136" y="168" width="128" height="20" rx="5" fill="#faf8ff"/>
-                <circle cx="151" cy="178" r="8" fill="none" stroke="#E4C1F9" stroke-width="2.5"/>
-                <rect x="166" y="173" width="70" height="9" rx="3" fill="#d8d0ec" opacity="0.35"/>
-                <!-- Calendar decoration (top right) -->
-                <rect x="306" y="52" width="58" height="54" rx="8" fill="#FCF6BD" stroke="#d4c840" stroke-width="1.5"/>
-                <rect x="306" y="52" width="58" height="18" rx="8" fill="#d4c840"/>
-                <rect x="306" y="62" width="58" height="8" fill="#d4c840"/>
-                <rect x="314" y="44" width="8" height="14" rx="4" fill="#b8a830"/>
-                <rect x="336" y="44" width="8" height="14" rx="4" fill="#b8a830"/>
-                <circle cx="320" cy="82" r="3.5" fill="#FF99C8"/>
-                <circle cx="335" cy="82" r="3.5" fill="#E4C1F9"/>
-                <circle cx="350" cy="82" r="3.5" fill="#A9DEF9"/>
-                <circle cx="320" cy="94" r="3.5" fill="#ddd"/>
-                <circle cx="335" cy="94" r="3.5" fill="#FF99C8" opacity="0.7"/>
-                <circle cx="350" cy="94" r="3.5" fill="#ddd"/>
-                <!-- Dots -->
-                <circle cx="84" cy="78" r="6" fill="#FF99C8" opacity="0.45"/>
-                <circle cx="352" cy="184" r="5" fill="#D0F4DE" opacity="0.65"/>
-              </svg>
-            </div>
-            <h3>School Meeting Preparation &amp; Support</h3>
-            <p>Support to help families feel prepared, informed, and confident going into school meetings.</p>
-            <div class="service-card-footer">
-              <a href="tutoring-meeting-support.html" class="btn">Learn More</a>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <div class="section-divider"></div>
-
-      <!-- ── WHAT TO EXPECT ── -->
-      <section class="expect-section" aria-label="What to Expect">
-        <h2 class="fade-up">What to Expect</h2>
-        <div class="expect-panel fade-up delay-1">
-
-          <div class="expect-row">
-            <div class="expect-icon">⏰</div>
-            <div class="expect-text">
-              <h3>Session Length</h3>
-              <p>Tutoring sessions are 60 minutes and are designed to provide focused, individualized support while maintaining student engagement and productivity.</p>
-            </div>
-          </div>
-
-          <div class="expect-row">
-            <div class="expect-icon">📍</div>
-            <div class="expect-text">
-              <h3>Location</h3>
-              <p>Sessions take place at a mutually agreed upon location, such as a local library or other quiet, public setting that supports learning and focus.</p>
-            </div>
-          </div>
-
-          <div class="expect-row">
-            <div class="expect-icon">💻</div>
-            <div class="expect-text">
-              <h3>Virtual Sessions</h3>
-              <p>Virtual sessions are available and can be a flexible option for families. These sessions are structured to provide the same level of support and engagement as in-person tutoring.</p>
-            </div>
-          </div>
-
-          <div class="expect-row">
-            <div class="expect-icon">🎒</div>
-            <div class="expect-text">
-              <h3>Materials &amp; Supplies</h3>
-              <p>All instructional materials and supplies are provided as needed. When appropriate, sessions may also focus on classroom assignments, homework, or upcoming assessments to support current learning.</p>
-            </div>
-          </div>
-
-          <div class="expect-row">
-            <div class="expect-icon">🤝</div>
-            <div class="expect-text">
-              <h3>Communication</h3>
-              <p>Families will receive brief updates following each session to stay informed on progress, focus areas, and next steps. For families enrolled in Guided Support services, additional communication and progress updates are provided.</p>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      
-
-
-
-      
-
+  <!-- PAGE HEADER -->
+  <section class="bg-slate-900 relative overflow-hidden py-20">
+    <div class="dot-pattern absolute inset-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-teal-950 opacity-90"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-teal-400 text-xs font-semibold uppercase tracking-widest mb-3">What I Offer</p>
+      <h1 class="text-5xl font-extrabold text-white tracking-tight mb-4">Tutoring &amp; Support Services</h1>
+      <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">Every service is designed to support students academically while helping families feel informed, connected, and confident in their child's learning journey.</p>
     </div>
+  </section>
 
-  </div>
+  <!-- SERVICE CARDS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-  <script src="js/components-loader.js"></script>
+        <!-- Card 1: Skill Building -->
+        <div class="group flex flex-col rounded-2xl border border-slate-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center p-8">
+            <svg class="w-20 h-20 text-white/30" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+          </div>
+          <div class="flex flex-col flex-1 p-7">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold uppercase tracking-widest text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">From $120/hr</span>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 mb-3">Academic Tutoring &amp; Skill Building</h2>
+            <p class="text-slate-500 text-sm leading-relaxed flex-1">Personalized tutoring designed to strengthen academic skills, build confidence, and support what students are learning in school — at their own pace.</p>
+            <a href="tutoring-skill-building.html" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-lg hover:bg-teal-700 transition-colors self-start">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Guided Support -->
+        <div class="group flex flex-col rounded-2xl border border-slate-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center p-8">
+            <svg class="w-20 h-20 text-white/30" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"/></svg>
+          </div>
+          <div class="flex flex-col flex-1 p-7">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold uppercase tracking-widest text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">From $160/hr</span>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 mb-3">Academic Tutoring &amp; Guided Support</h2>
+            <p class="text-slate-500 text-sm leading-relaxed flex-1">A collaborative approach that aligns tutoring with classroom learning and keeps families consistently informed and supported throughout the process.</p>
+            <a href="tutoring-guided-support.html" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-lg hover:bg-teal-700 transition-colors self-start">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Meeting Support -->
+        <div class="group flex flex-col rounded-2xl border border-slate-100 hover:border-teal-200 hover:shadow-xl transition-all duration-300 overflow-hidden">
+          <div class="h-48 bg-gradient-to-br from-teal-800 to-slate-900 flex items-center justify-center p-8">
+            <svg class="w-20 h-20 text-white/30" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
+          </div>
+          <div class="flex flex-col flex-1 p-7">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-semibold uppercase tracking-widest text-teal-600 bg-teal-50 px-2.5 py-1 rounded-full">From $75/hr</span>
+            </div>
+            <h2 class="text-xl font-bold text-slate-900 mb-3">School Meeting Preparation &amp; Support</h2>
+            <p class="text-slate-500 text-sm leading-relaxed flex-1">Support to help families feel prepared, informed, and confident going into school meetings — from IEP reviews to parent-teacher conferences.</p>
+            <a href="tutoring-meeting-support.html" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-lg hover:bg-teal-700 transition-colors self-start">
+              Learn More
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-3">Before You Begin</p>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-3">What to Expect</h2>
+        <p class="text-slate-500 text-base max-w-xl mx-auto">Everything you need to know about how sessions work.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden divide-y divide-slate-100">
+        <div class="flex items-start gap-5 p-6 sm:p-8">
+          <div class="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Session Length</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Tutoring sessions are 60 minutes and are designed to provide focused, individualized support while maintaining student engagement and productivity.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 p-6 sm:p-8">
+          <div class="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Location</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Sessions take place at a mutually agreed upon location, such as a local library or other quiet, public setting that supports learning and focus.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 p-6 sm:p-8 bg-teal-50/40">
+          <div class="w-10 h-10 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Virtual Sessions</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Virtual sessions are available and can be a flexible option for families. These sessions are structured to provide the same level of support and engagement as in-person tutoring.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 p-6 sm:p-8">
+          <div class="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Materials &amp; Supplies</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">All instructional materials and supplies are provided as needed. When appropriate, sessions may also focus on classroom assignments, homework, or upcoming assessments to support current learning.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-5 p-6 sm:p-8">
+          <div class="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-slate-900 mb-1">Communication</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Families will receive brief updates following each session to stay informed on progress, focus areas, and next steps. For families enrolled in Guided Support services, additional communication and progress updates are provided.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="js/components-loader.js"></script>
 </body>
 </html>

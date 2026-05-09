@@ -7,221 +7,138 @@
   <meta name="description" content="Hear from families and students who have worked with Alyssa Tudino at Tudino Learning. Real results, real confidence, real support." />
   <meta name="author" content="Alyssa Tudino" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#DDD0F5" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Tudino Learning" />
-  <meta property="og:title" content="Testimonials — Tudino Learning" />
-  <meta property="og:description" content="Hear from families and students who have worked with Alyssa Tudino at Tudino Learning. Real results, real confidence, real support." />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Testimonials — Tudino Learning" />
-  <meta name="twitter:description" content="Hear from families and students who have worked with Alyssa Tudino at Tudino Learning. Real results, real confidence, real support." />
   <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    .testimonials-page {
-      background: var(--sage);
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      flex-direction: column;
-    }
-
-    .testimonials-content {
-      flex: 1;
-      padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 6vw, 4rem);
-      max-width: 1000px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-
-    /* ── Header ── */
-    .testimonials-header {
-      margin-bottom: clamp(2rem, 4vw, 3rem);
-    }
-
-    .testimonials-header h1 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2.5rem, 7vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      color: var(--text-dark);
-      margin-bottom: 0.6rem;
-    }
-
-    .testimonials-header p {
-      font-family: var(--font-body);
-      font-size: clamp(0.9rem, 1.4vw, 1rem);
-      color: var(--text-mid);
-      line-height: 1.7;
-      max-width: 560px;
-    }
-
-    /* ── Testimonial cards ── */
-    .testimonials-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: clamp(1.5rem, 3vw, 2.25rem) clamp(1.5rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2rem);
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      transition: box-shadow 0.25s, transform 0.25s;
-    }
-
-    .testimonial-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    /* Accent bar on left edge */
-    .testimonial-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 1.5rem; bottom: 1.5rem;
-      width: 4px;
-      border-radius: 0 4px 4px 0;
-      background: var(--pink);
-    }
-
-    /* Alternate accent colors for variety */
-    .testimonial-card:nth-child(2)::before { background: var(--lavender); }
-    .testimonial-card:nth-child(3)::before { background: var(--blue); }
-    .testimonial-card:nth-child(4)::before { background: var(--pink); }
-    .testimonial-card:nth-child(5)::before { background: var(--lavender); }
-    .testimonial-card:nth-child(6)::before { background: var(--blue); }
-
-    .testimonial-quote {
-      font-family: var(--font-body);
-      font-size: clamp(0.92rem, 1.4vw, 1.05rem);
-      color: var(--text-dark);
-      line-height: 1.75;
-      font-style: italic;
-      margin-bottom: 1.1rem;
-      padding-left: 1rem;
-    }
-
-    .testimonial-quote::before {
-      content: '\201C';
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--pink);
-      line-height: 0;
-      vertical-align: -0.6rem;
-      margin-right: 0.2rem;
-    }
-
-    .testimonial-meta {
-      padding-left: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .testimonial-name {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(0.85rem, 1.3vw, 0.95rem);
-      color: var(--text-dark);
-    }
-
-    .testimonial-role {
-      font-family: var(--font-body);
-      font-size: clamp(0.8rem, 1.2vw, 0.88rem);
-      color: var(--text-light);
-    }
-
-    .testimonial-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--text-light);
-      flex-shrink: 0;
-    }
-
-    /* Stars */
-    .testimonial-stars {
-      color: var(--pink);
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-      padding-left: 1rem;
-    }
-
-    /* ── Placeholder notice ── */
-    .placeholder-notice {
-      background: var(--yellow);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.5rem;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(0.85rem, 1.3vw, 0.95rem);
-      color: var(--text-dark);
-      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-    .placeholder-notice::before { content: '✏️'; }
-  </style>
 </head>
-<body>
+<body class="bg-white text-slate-900 font-sans antialiased">
+<div class="page pt-16">
 
+  <!-- PAGE HEADER -->
+  <section class="bg-slate-900 relative overflow-hidden py-20">
+    <div class="dot-pattern absolute inset-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-teal-950 opacity-90"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-teal-400 text-xs font-semibold uppercase tracking-widest mb-3">From Families</p>
+      <h1 class="text-5xl font-extrabold text-white tracking-tight mb-4">Testimonials</h1>
+      <p class="text-slate-300 text-lg max-w-xl leading-relaxed">Hear from the families and students I've had the privilege of working with.</p>
+    </div>
+  </section>
 
+  <!-- TESTIMONIALS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-  <div class="page testimonials-page">
-    <div class="testimonials-content">
+        <!-- Testimonial 1 -->
+        <div class="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="flex gap-0.5 mb-5">
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <svg class="w-8 h-8 text-teal-200 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-slate-700 text-sm leading-relaxed mb-6">Alyssa has been an incredible support for our family. Our son struggled with reading for years, and within just a few months of working with her, his confidence has completely transformed. She truly meets kids where they are.</p>
+          <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+            <div class="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-teal-700 text-xs font-bold">P</span>
+            </div>
+            <div>
+              <p class="text-slate-800 text-sm font-semibold">Parent of a 4th Grader</p>
+            </div>
+          </div>
+        </div>
 
-      <div class="testimonials-header fade-up">
-        <h1>Testimonials</h1>
-        <p>Hear from the families and students I've had the privilege of working with.</p>
+        <!-- Testimonial 2 -->
+        <div class="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="flex gap-0.5 mb-5">
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <svg class="w-8 h-8 text-teal-200 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-slate-700 text-sm leading-relaxed mb-6">Having Alyssa attend our IEP meeting with us was a game changer. We finally felt like we understood what was being said and what our daughter's goals actually meant. I can't recommend her enough.</p>
+          <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+            <div class="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-teal-700 text-xs font-bold">P</span>
+            </div>
+            <div>
+              <p class="text-slate-800 text-sm font-semibold">Parent of a Student with an IEP</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="flex gap-0.5 mb-5">
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <svg class="w-8 h-8 text-teal-200 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-slate-700 text-sm leading-relaxed mb-6">The communication between Alyssa and my son's teacher made such a difference. Everything felt coordinated and consistent for the first time. He went from dreading homework to actually sitting down and doing it.</p>
+          <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+            <div class="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-teal-700 text-xs font-bold">P</span>
+            </div>
+            <div>
+              <p class="text-slate-800 text-sm font-semibold">Parent of a 6th Grader</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div class="flex gap-0.5 mb-5">
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg class="w-4 h-4 text-teal-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <svg class="w-8 h-8 text-teal-200 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+          <p class="text-slate-700 text-sm leading-relaxed mb-6">Alyssa is warm, patient, and incredibly knowledgeable. Our daughter looks forward to their sessions every week, which says everything. She has a gift for making learning feel safe and encouraging.</p>
+          <div class="flex items-center gap-3 pt-5 border-t border-slate-100">
+            <div class="w-9 h-9 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-teal-700 text-xs font-bold">P</span>
+            </div>
+            <div>
+              <p class="text-slate-800 text-sm font-semibold">Parent of a 2nd Grader</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-
-      <div class="testimonials-list">
-
-        <div class="testimonial-card fade-up delay-1">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">Alyssa has been an incredible support for our family. Our son struggled with reading for years, and within just a few months of working with her, his confidence has completely transformed. She truly meets kids where they are.</p>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">Parent of a 4th grader</span>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-up delay-2">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">Having Alyssa attend our IEP meeting with us was a game changer. We finally felt like we understood what was being said and what our daughter's goals actually meant. I can't recommend her enough.</p>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">Parent of a student with an IEP</span>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-up delay-3">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">The communication between Alyssa and my son's teacher made such a difference. Everything felt coordinated and consistent for the first time. He went from dreading homework to actually sitting down and doing it.</p>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">Parent of a 6th grader</span>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-up delay-3">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">Alyssa is warm, patient, and incredibly knowledgeable. Our daughter looks forward to their sessions every week, which says everything. She has a gift for making learning feel safe and encouraging.</p>
-          <div class="testimonial-meta">
-            <span class="testimonial-name">Parent of a 2nd grader</span>
-          </div>
-        </div>
-
+      <!-- CTA -->
+      <div class="mt-14 text-center">
+        <p class="text-slate-500 text-base mb-6">Ready to experience the difference?</p>
+        <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-700 transition-colors">
+          Get in Touch
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
     </div>
+  </section>
 
-  </div>
-
-  <script src="js/components-loader.js"></script>
+</div>
+<script src="js/components-loader.js"></script>
 </body>
 </html>

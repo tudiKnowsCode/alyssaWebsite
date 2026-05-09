@@ -1,75 +1,55 @@
-// Load shared HTML components
 async function loadComponents() {
   try {
-    // Load nav
-    const navResponse = await fetch('components/nav.html');
-    if (!navResponse.ok) throw new Error('Failed to load nav');
-    const navHTML = await navResponse.text();
-    const navContainer = document.querySelector('body');
-    navContainer.insertAdjacentHTML('afterbegin', navHTML);
+    const navRes = await fetch('components/nav.html');
+    if (!navRes.ok) throw new Error('Failed to load nav');
+    document.body.insertAdjacentHTML('afterbegin', await navRes.text());
 
-    // Load footer
-    const footerResponse = await fetch('components/footer.html');
-    if (!footerResponse.ok) throw new Error('Failed to load footer');
-    const footerHTML = await footerResponse.text();
     const page = document.querySelector('.page');
-    if (page) {
-      page.insertAdjacentHTML('beforeend', footerHTML);
-    }
 
-    // Load tagline strip before footer (now that footer exists in DOM)
-    const taglineResponse = await fetch('components/tagline-strip.html');
-    if (!taglineResponse.ok) throw new Error('Failed to load tagline');
-    const taglineHTML = await taglineResponse.text();
+    const footerRes = await fetch('components/footer.html');
+    if (!footerRes.ok) throw new Error('Failed to load footer');
+    if (page) page.insertAdjacentHTML('beforeend', await footerRes.text());
+
+    const taglineRes = await fetch('components/tagline-strip.html');
+    if (!taglineRes.ok) throw new Error('Failed to load tagline');
     const footer = document.querySelector('footer');
-    if (footer) {
-      footer.insertAdjacentHTML('beforebegin', taglineHTML);
-    }
+    if (footer) footer.insertAdjacentHTML('beforebegin', await taglineRes.text());
 
-    // Set active nav link based on current page
     setActiveNavLink();
-
-    // Initialize nav after loading
     initializeNav();
-  } catch (error) {
-    console.error('Error loading components:', error);
+  } catch (err) {
+    console.error('Error loading components:', err);
   }
 }
 
-// Set active nav link based on current page URL
 function setActiveNavLink() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-links a, .nav-drawer a');
-  
-  navLinks.forEach(link => {
+  document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.remove('active');
-    const href = link.getAttribute('href');
+    const href = (link.getAttribute('href') || '').split('/').pop();
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
     }
   });
 }
 
-// Initialize nav toggle (from nav.js)
 function initializeNav() {
-  const toggle = document.getElementById('navToggle');
-  const drawer = document.getElementById('navDrawer');
-  if (!toggle || !drawer) return;
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
 
-  toggle.addEventListener('click', () => {
-    const open = drawer.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open);
+  btn.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isOpen));
   });
 
-  // close on link click
-  drawer.querySelectorAll('a').forEach(a => {
+  menu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      drawer.classList.remove('open');
-      toggle.classList.remove('open');
+      menu.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
     });
   });
 }
 
-// Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', loadComponents);

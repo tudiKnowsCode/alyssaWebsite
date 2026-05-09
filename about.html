@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,247 +7,128 @@
   <meta name="description" content="Meet Alyssa Tudino — a certified special education teacher with 7 years of experience helping students build skills, confidence, and independence." />
   <meta name="author" content="Alyssa Tudino" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#DDD0F5" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Tudino Learning" />
-  <meta property="og:title" content="About Alyssa — Tudino Learning" />
-  <meta property="og:description" content="Meet Alyssa Tudino — a certified special education teacher with 7 years of experience helping students build skills, confidence, and independence." />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="About Alyssa — Tudino Learning" />
-  <meta name="twitter:description" content="Meet Alyssa Tudino — a certified special education teacher with 7 years of experience helping students build skills, confidence, and independence." />
   <link rel="icon" type="image/svg+xml" href="images/logos/small.svg" />
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    .about-page {
-      background: var(--sage);
-      min-height: calc(100vh - var(--nav-height));
-      display: flex;
-      flex-direction: column;
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: calc(100vh - var(--nav-height) - 52px);
-    }
-
-    /* Left panel */
-    .about-left {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-landscape {
-      flex: 1;
-      min-height: 240px;
-      background: var(--sage);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-landscape svg {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .about-name-block {
-      background: var(--sage);
-      padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem);
-    }
-
-    .about-name-block h1 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      letter-spacing: -0.03em;
-      color: var(--text-dark);
-      margin-bottom: 0.6rem;
-    }
-
-    .about-name-block p {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-      color: var(--text-mid);
-      line-height: 1.6;
-    }
-
-    /* Right panel */
-    .about-right {
-      background: var(--sage);
-      padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3.5rem);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .about-right h2 {
-      font-family: var(--font-display);
-      font-weight: 900;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      color: var(--text-dark);
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .about-divider {
-      height: 2px;
-      background: rgba(26, 26, 26, 0.2);
-      margin-bottom: 1.5rem;
-      border-radius: 2px;
-    }
-
-    .about-body {
-      font-family: var(--font-body);
-      font-size: clamp(0.9rem, 1.4vw, 1rem);
-      color: var(--text-mid);
-      line-height: 1.75;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-
-    /* Responsive */
-    @media (max-width: 860px) {
-      .about-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .about-landscape {
-        min-height: 220px;
-        max-height: 260px;
-      }
-
-      .about-name-block {
-        padding: 1.5rem;
-      }
-
-      .about-right {
-        padding: 2rem 1.5rem;
-      }
-    }
-  </style>
 </head>
+<body class="bg-white text-slate-900 font-sans antialiased">
+<div class="page pt-16">
 
-<body>
-
-
-
-  <!-- PAGE -->
-  <div class="page about-page">
-    <div class="about-layout">
-
-      <!-- Left -->
-      <div class="about-left fade-up">
-        <!-- Landscape illustration -->
-        <div class="about-landscape">
-          <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet"
-            aria-label="Educator's corner with bookshelf, diploma, graduation cap, and apple">
-            <rect width="600" height="400" fill="#F3EAFF" />
-            <circle cx="95" cy="82" r="100" fill="#E4C1F9" opacity="0.28" />
-            <circle cx="530" cy="348" r="80" fill="#D0F4DE" opacity="0.32" />
-            <rect x="56" y="72" width="148" height="112" rx="8" fill="white" stroke="#E4C1F9" stroke-width="3" />
-            <rect x="66" y="82" width="128" height="92" rx="5" fill="#FDF8E6" />
-            <line x1="82" y1="110" x2="178" y2="110" stroke="#d4c84a" stroke-width="2.5" />
-            <line x1="90" y1="124" x2="170" y2="124" stroke="#d4c84a" stroke-width="1.5" />
-            <line x1="90" y1="136" x2="170" y2="136" stroke="#d4c84a" stroke-width="1.5" />
-            <line x1="96" y1="148" x2="164" y2="148" stroke="#d4c84a" stroke-width="1" />
-            <circle cx="130" cy="170" r="12" fill="#FF99C8" />
-            <circle cx="130" cy="170" r="8" fill="#d4699e" />
-            <rect x="252" y="68" width="82" height="11" rx="2" fill="#2a2a2a" />
-            <polygon points="293,38 252,70 334,70" fill="#1a1a1a" />
-            <rect x="320" y="70" width="4" height="24" fill="#444" />
-            <circle cx="322" cy="94" r="7" fill="#FCF6BD" />
-            <path d="M322,94 Q332,101 328,114" fill="none" stroke="#d4c84a" stroke-width="2" />
-            <rect x="190" y="218" width="100" height="62" rx="4" fill="#FCF6BD" />
-            <rect x="290" y="218" width="100" height="62" rx="4" fill="white" />
-            <rect x="286" y="215" width="8" height="68" rx="2" fill="#d4c84a" />
-            <line x1="206" y1="234" x2="278" y2="234" stroke="#ccc" stroke-width="1.5" />
-            <line x1="206" y1="246" x2="278" y2="246" stroke="#ccc" stroke-width="1.5" />
-            <line x1="206" y1="258" x2="278" y2="258" stroke="#ccc" stroke-width="1.5" />
-            <line x1="206" y1="270" x2="278" y2="270" stroke="#ccc" stroke-width="1.5" />
-            <line x1="302" y1="234" x2="374" y2="234" stroke="#ccc" stroke-width="1.5" />
-            <line x1="302" y1="246" x2="374" y2="246" stroke="#ccc" stroke-width="1.5" />
-            <line x1="302" y1="258" x2="374" y2="258" stroke="#ccc" stroke-width="1.5" />
-            <line x1="302" y1="270" x2="374" y2="270" stroke="#ccc" stroke-width="1.5" />
-            <rect x="432" y="96" width="136" height="208" rx="6" fill="#dbb896" />
-            <rect x="440" y="104" width="120" height="192" rx="4" fill="#c9a47e" />
-            <rect x="432" y="166" width="136" height="8" fill="#c4a066" />
-            <rect x="432" y="238" width="136" height="8" fill="#c4a066" />
-            <rect x="442" y="110" width="16" height="56" rx="2" fill="#FF99C8" />
-            <rect x="460" y="116" width="14" height="50" rx="2" fill="#A9DEF9" />
-            <rect x="476" y="112" width="18" height="54" rx="2" fill="#FCF6BD" />
-            <rect x="496" y="114" width="14" height="52" rx="2" fill="#E4C1F9" />
-            <rect x="512" y="110" width="18" height="56" rx="2" fill="#D0F4DE" />
-            <rect x="532" y="116" width="14" height="50" rx="2" fill="#FF99C8" opacity="0.7" />
-            <rect x="442" y="174" width="18" height="64" rx="2" fill="#E4C1F9" />
-            <rect x="462" y="178" width="14" height="60" rx="2" fill="#FCF6BD" />
-            <rect x="478" y="174" width="16" height="64" rx="2" fill="#A9DEF9" />
-            <rect x="496" y="176" width="20" height="62" rx="2" fill="#FF99C8" />
-            <rect x="518" y="174" width="14" height="64" rx="2" fill="#D0F4DE" />
-            <rect x="534" y="180" width="14" height="58" rx="2" fill="#E4C1F9" opacity="0.7" />
-            <rect x="486" y="86" width="10" height="16" rx="3" fill="#FF99C8" />
-            <ellipse cx="491" cy="84" rx="9" ry="16" fill="#D0F4DE" />
-            <ellipse cx="480" cy="90" rx="7" ry="11" fill="#b8ead0" transform="rotate(-20,480,90)" />
-            <ellipse cx="502" cy="90" rx="7" ry="11" fill="#b8ead0" transform="rotate(20,502,90)" />
-            <circle cx="122" cy="290" r="30" fill="#FF99C8" />
-            <path d="M122,262 Q136,252 142,260" fill="#D0F4DE" stroke="#90c46e" stroke-width="1.5" />
-            <rect x="120" y="258" width="4" height="12" rx="2" fill="#90c46e" />
-            <ellipse cx="112" cy="282" rx="6" ry="9" fill="white" opacity="0.25" transform="rotate(-15,112,282)" />
-            <path
-              d="M362,138 C362,132 354,126 348,132 C342,126 334,132 334,138 C334,147 348,158 348,158 C348,158 362,147 362,138 Z"
-              fill="#FF99C8" opacity="0.7" />
-            <path
-              d="M182,180 C182,175 176,170 172,175 C168,170 162,175 162,180 C162,186 172,194 172,194 C172,194 182,186 182,180 Z"
-              fill="#E4C1F9" opacity="0.8" />
-            <path d="M432,56 L435,66 L445,66 L437,72 L440,82 L432,76 L424,82 L427,72 L419,66 L429,66 Z" fill="#FCF6BD"
-              stroke="#d4c84a" stroke-width="1.5" opacity="0.9" />
-          </svg>
-        </div>
-
-        <!-- Name block -->
-        <div class="about-name-block">
-          <h1>Alyssa Tudino</h1>
-          <p>Educator&nbsp;·&nbsp;Learning Enthusiast&nbsp;·&nbsp;Family Supporter<br>Helping students grow with
-            confidence</p>
-        </div>
-      </div>
-
-      <!-- Right -->
-      <div class="about-right fade-up delay-2">
-        <h2>About Me</h2>
-        <div class="about-divider"></div>
-        <div class="about-body">
-          <p>Hi! I'm Alyssa, a certified teacher with 7 years of experience in special education across both elementary
-            and middle school settings—and a genuine love for helping students and families feel confident and
-            supported.</p>
-          <p>I've had the opportunity to work with students with a wide range of learning needs, and one of my favorite
-            parts of teaching is helping them build skills, confidence, and independence in a way that feels achievable
-            and encouraging. I also really value working closely with families, supporting them in understanding and
-            navigating their child's educational journey—both in and out of the classroom.</p>
-          <p>In addition to my classroom experience, I've provided individualized tutoring for students of all ages,
-            which has allowed me to meet learners where they are and tailor instruction to fit their unique strengths
-            and pace.</p>
-          <p>I also have a lot of experience supporting students through important transitions—like moving from
-            elementary to middle school and middle to high school—and I love helping students feel more prepared,
-            organized, and confident during those big changes.</p>
-          <p>Through my work in schools, I've seen just how powerful it is when families and educators are truly working
-            together. That's what inspired me to create Tudino Learning—so I can support not just students, but families
-            as they navigate and feel confident in their child's learning experience every step of the way.</p>
-        </div>
-      </div>
-
+  <!-- PAGE HEADER -->
+  <section class="bg-slate-900 relative overflow-hidden py-20">
+    <div class="dot-pattern absolute inset-0"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-teal-950 opacity-90"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-teal-400 text-xs font-semibold uppercase tracking-widest mb-3">Meet Alyssa</p>
+      <h1 class="text-5xl font-extrabold text-white tracking-tight mb-4">About Me</h1>
+      <p class="text-slate-300 text-lg max-w-xl leading-relaxed">Educator · Learning Enthusiast · Family Supporter — helping students grow with confidence.</p>
     </div>
+  </section>
 
-  </div>
+  <!-- MAIN BIO -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-  <script src="js/components-loader.js"></script>
+        <!-- Photo / Identity card -->
+        <div class="sticky top-24">
+          <div class="relative bg-gradient-to-b from-teal-600 to-slate-800 rounded-2xl overflow-hidden h-[480px] flex flex-col justify-end shadow-2xl">
+            <!-- Decorative background shapes -->
+            <div class="absolute top-8 right-8 w-32 h-32 bg-white/5 rounded-full"></div>
+            <div class="absolute top-20 left-6 w-16 h-16 bg-teal-400/10 rounded-full"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <div class="w-28 h-28 bg-white/10 rounded-full mx-auto mb-4 flex items-center justify-center border-2 border-white/20">
+                  <svg class="w-14 h-14 text-white/60" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                </div>
+                <p class="text-white/50 text-sm font-medium">Photo Coming Soon</p>
+              </div>
+            </div>
+            <!-- Name overlay at bottom -->
+            <div class="relative bg-gradient-to-t from-slate-900/90 to-transparent px-8 py-6">
+              <p class="text-white font-bold text-2xl">Alyssa Tudino</p>
+              <p class="text-teal-300 text-sm mt-1">Learning Specialist &amp; Family Support Partner</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full">Certified Teacher</span>
+                <span class="bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full">7+ Years Experience</span>
+                <span class="bg-white/10 text-white/80 text-xs font-medium px-3 py-1 rounded-full">Special Education</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio text -->
+        <div>
+          <p class="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-3">Background</p>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mb-6">Hi! I'm Alyssa.</h2>
+          <div class="space-y-5 text-slate-600 leading-relaxed">
+            <p>I'm a certified teacher with 7 years of experience in special education across both elementary and middle school settings — and a genuine love for helping students and families feel confident and supported.</p>
+            <p>I've had the opportunity to work with students with a wide range of learning needs, and one of my favorite parts of teaching is helping them build skills, confidence, and independence in a way that feels achievable and encouraging. I also really value working closely with families, supporting them in understanding and navigating their child's educational journey — both in and out of the classroom.</p>
+            <p>In addition to my classroom experience, I've provided individualized tutoring for students of all ages, which has allowed me to meet learners where they are and tailor instruction to fit their unique strengths and pace.</p>
+            <p>I also have a lot of experience supporting students through important transitions — like moving from elementary to middle school and middle to high school — and I love helping students feel more prepared, organized, and confident during those big changes.</p>
+            <p>Through my work in schools, I've seen just how powerful it is when families and educators are truly working together. That's what inspired me to create Tudino Learning — so I can support not just students, but families as they navigate and feel confident in their child's learning experience every step of the way.</p>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="tutoring.html" class="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white font-semibold text-sm rounded-lg hover:bg-teal-700 transition-colors">
+              View Services
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+            <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 border border-slate-200 text-slate-700 font-semibold text-sm rounded-lg hover:border-teal-300 hover:text-teal-700 transition-colors">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <p class="text-teal-600 text-xs font-semibold uppercase tracking-widest mb-3">My Approach</p>
+        <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">What I Believe In</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Every Student is Unique</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Instruction should be tailored to each child's individual strengths, pace, and learning style — not a one-size-fits-all approach.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Families Are Partners</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">The most powerful learning happens when families and educators work together with shared understanding and open communication.</p>
+        </div>
+        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+          <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-3">Confidence Changes Everything</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Building academic skills matters, but building a student's belief in themselves is what creates lasting, meaningful growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script src="js/components-loader.js"></script>
 </body>
-
 </html>
